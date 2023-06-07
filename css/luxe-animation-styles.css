@@ -1,0 +1,173 @@
+:root{
+  --transition-dalay:0.5s;
+}
+
+@keyframes textAnimation1 {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(100);
+  }
+}
+
+#luxe-menu-primary_navigation.text-animation1 {
+  animation:textAnimation1 1s ease-out;
+}
+
+@keyframes textAnimation2 {
+  0% {
+    opacity: 0;
+    transform: translateX(150%);
+  }
+  
+  50% {
+    opacity: 0;
+    transform: translateX(150%);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.text-animation2 {
+
+  animation: textAnimation2 1s ease-in;
+  animation-delay: var(--transition-delay);
+}
+
+@keyframes slideInAnimation {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+/* Apply animation to the menu items */
+.text-animation3 {
+  position: relative;
+  left: -100%;
+  animation: slideInAnimation 1s ease-in forwards;
+  animation-delay: var(--transition-dalay); /* Add a 1-second delay before the animation starts */
+}
+
+/*Toggle container animations*/
+
+/*Animation 1*/
+
+/* .luxe-menu-wrap .luxe-toggler:checked ~ .luxe-mobile-menu .toggler-container-animation-one {
+  transform: scaleX(1);
+  transition-duration: var(--luxe-menu-speed);
+}
+.luxe-menu-wrap .luxe-mobile-menu .toggler-container-animation-one{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex: none;
+  transform: scaleX(0);
+  transition: all 0.4s ease;
+} */
+
+/*Animation 2*/
+.luxe-menu-wrap
+  .luxe-toggler:checked
+  ~ .luxe-mobile-menu
+  .toggler-container-animation-two {
+  transform: translateX(0);
+  transition-duration: var(--luxe-menu-speed);
+}
+.luxe-menu-wrap .luxe-mobile-menu .toggler-container-animation-two {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex: none;
+  transform: translateX(-100%);
+  transition: all 0.4s ease;
+  transition-delay: ;
+}
+.luxe-menu-wrap
+  .luxe-toggler:checked
+  ~ .luxe-mobile-menu
+  .toggler-container-animation-down {
+  transform: translateY(0);
+  transition-duration: var(--luxe-menu-speed);
+}
+
+.luxe-menu-wrap .luxe-mobile-menu .toggler-container-animation-down {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex: none;
+  transform: translateY(100%);
+  transition: all 0.4s ease;
+}
+
+/*Animation 3*/
+.luxe-menu-wrap
+  .luxe-toggler:checked
+  ~ .luxe-mobile-menu
+  .toggler-container-animation-three {
+  transform: translateY(0);
+  transition-duration: var(--luxe-menu-speed);
+}
+.luxe-menu-wrap .luxe-mobile-menu .toggler-container-animation-three {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex: none;
+  transform: translateY(-100%);
+  transition: all 0.4s ease;
+}
+
+/*Animation 4*/
+.luxe-menu-wrap
+  .luxe-toggler:checked
+  ~ .luxe-mobile-menu
+  .toggler-container-animation-four {
+  opacity: 1;
+  transition-duration: var(--luxe-menu-speed);
+}
+
+.luxe-menu-wrap .luxe-mobile-menu .toggler-container-animation-four {
+  background: black;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex: none;
+  opacity: 0;
+  transition: all 0.9s ease;
+}
+
+/*Hamburger lines Animations*/
+
+/* luxe-toggler Animation */
+.luxe-menu-wrap .luxe-toggler:checked + .luxe-hamburger .luxe-hamburger-line {
+  transform: rotate(135deg);
+}
+
+/* Turns Lines Into X */
+.luxe-menu-wrap
+  .luxe-toggler:checked
+  + .luxe-hamburger
+  .luxe-hamburger-line:before,
+.luxe-menu-wrap
+  .luxe-toggler:checked
+  + .luxe-hamburger
+  .luxe-hamburger-line:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* Rotate On Hover When Checked */
+.luxe-menu-wrap
+  .luxe-toggler:checked:hover
+  + .luxe-hamburger
+  .luxe-hamburger-line {
+  transform: rotate(225deg);
+}

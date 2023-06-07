@@ -1,0 +1,21 @@
+/*Responsive*/
+
+@media (max-width: 767px) {
+
+      .default-header-none-mobile {
+        display: none !important;
+      }
+      .luxe-header-none-mobile {
+        display: none !important;
+      }
+
+}
+@media (min-width: 768px) {
+     .default-header-none-desktop {
+        display: none !important;
+      }
+      .luxe-header-none-desktop {
+        display: none !important;
+      }
+}
+

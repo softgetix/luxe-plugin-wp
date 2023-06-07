@@ -173,12 +173,32 @@ function luxe_mobile_menu_slide_toggle_animation_field_callback()
         // Add more animation options as needed
     );
 
-    echo '<select name="luxe_mobile_menu_slide_toggle_animation">';
+    // echo '<select name="luxe_mobile_menu_slide_toggle_animation">';
+    // foreach ($animations as $animation_key => $animation_label) {
+    //     $selected = selected($toggle_animation, $animation_key, false);
+    //     echo '<option value="' . esc_attr($animation_key) . '"' . $selected . '>' . esc_html($animation_label) . '</option>';
+    // }
+    // echo '</select>';
+
+    $html = '<div class="hamburgers_container">';
+
+    // echo '<select name="luxe_mobile_menu_slide_hamburger_icon_styles">';
+    $no = 1;
+    $checked_class = '';
     foreach ($animations as $animation_key => $animation_label) {
-        $selected = selected($toggle_animation, $animation_key, false);
-        echo '<option value="' . esc_attr($animation_key) . '"' . $selected . '>' . esc_html($animation_label) . '</option>';
+        if ($animation_key == $toggle_animation) {
+            $checked_class = 'checked';
+        }
+        $string = '<label for="' . $animation_key . '" class="" ' . $checked_class . '">
+  <img  src="'.plugins_url('/assets/images/'.$animation_key.'.png', __FILE__).'" width="40" height="40" />
+  <input type="radio" id="' . $animation_key . '" name="luxe_mobile_menu_slide_toggle_animation" value="' . esc_attr($animation_key) . '" />
+      </label> ';
+        $html .= $string;
+        $no++;
+        $checked_class = '';
     }
-    echo '</select>';
+    $html .= '</div>';
+    echo $html;
 }
 
 // Dropdown animation
@@ -209,7 +229,7 @@ function luxe_mobile_menu_slide_hamburger_icon_styles_field_callback()
         if ($animation_key == $togg) {
             $checked_class = 'checked';
         }
-        $string = '<label for="' . $animation_key . '" class="luxe-hamburger-label '.$checked_class.'">
+        $string = '<label for="' . $animation_key . '" class="luxe-hamburger-label ' . $checked_class . '">
   <div id="luxe-nav-icon' . $no . '" class="">
             <span></span>
             <span></span>

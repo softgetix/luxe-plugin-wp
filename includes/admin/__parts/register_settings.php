@@ -16,6 +16,29 @@ register_setting('luxe_mobile_menu_slide_settings_settingPage', 'luxe_mobile_men
 register_setting('luxe_mobile_menu_slide_settings_settingPage', 'luxe_mobile_menu_slide_container_font_color');
 register_setting('luxe_mobile_menu_slide_settings_settingPage', 'luxe_mobile_menu_slide_container_submenu_font_color');
 register_setting('luxe_mobile_menu_slide_settings_settingPage', 'luxe_mobile_menu_slide_container_font_size');
+register_setting('luxe_mobile_menu_slide_settings_settingPage', 'luxe_mobile_menu_slide_container_font_line_height
+');
+register_setting('luxe_mobile_menu_slide_settings_settingPage', 'luxe_mobile_menu_slide_container_font_size_unit
+
+');
+register_setting('luxe_mobile_menu_slide_settings_settingPage', 'luxe_mobile_menu_slide_container_line_height_unit
+');
+register_setting('luxe_mobile_menu_slide_settings_settingPage', 'luxe_mobile_menu_slide_container_stagger_animation
+');
+
+
+// register settings for submenu
+register_setting('luxe_mobile_menu_slide_settings_settingPage', 'luxe_mobile_menu_slide_container_sub_font_size
+');
+
+register_setting('luxe_mobile_menu_slide_settings_settingPage', 'luxe_mobile_menu_slide_container_sub_font_size_unit
+');
+register_setting('luxe_mobile_menu_slide_settings_settingPage', 'luxe_mobile_menu_slide_container_sub_line_height
+');
+register_setting('luxe_mobile_menu_slide_settings_settingPage', 'luxe_mobile_menu_slide_container_sub_line_height_unit
+');
+
+
 register_setting('luxe_mobile_menu_slide_settings_settingPage', 'luxe_mobile_menu_slide_container_font_animation');
 
 

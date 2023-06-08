@@ -75,27 +75,68 @@ function luxe_mobile_menu_slide_settings_page_callback()
 
                             ?>
                         </div>
-                        <div class="luxe-settings-section-menu">
+                        <div style="margin-top:20px" class="luxe-hamburger-styles-container">
+                            <div class="luxe-settings-section-menu">
 
-                            <?php
-                            //  settings_fields('luxe_mobile_menu_slide_settings');
-                            do_settings_sections('luxe_mobile_menu_slide_a_settings_settingPage');
-                            ?>
-                        </div>
-                        <div class="luxe-settings-section-menu">
+                                <?php
 
-                            <?php
-                            //  settings_fields('luxe_mobile_menu_slide_settings');
-                            do_settings_sections('luxe_mobile_menu_slide_background_overlays_section_settingPage')
+                                do_settings_sections('luxe_mobile_menu_slide_a_settings_settingPage');
                                 ?>
+                            </div>
+                            <div class="luxe-preview-container">
+                                <span class="luxe-preview-badge">
+                                    Preview
+                                </span>
+                            </div>
                         </div>
-                        <div class="luxe-settings-section-menu">
+                        <div style="margin-top:20px" class="luxe-hamburger-styles-container">
+                            <div class="luxe-settings-section-menu">
 
-                            <?php
-                            //  settings_fields('luxe_mobile_menu_slide_settings');
-                            do_settings_sections('luxe_mobile_menu_typogrophy_section_settingPage')
-                                ?>
+
+                                <?php
+                                //  settings_fields('luxe_mobile_menu_slide_settings');
+                                do_settings_sections('luxe_mobile_menu_slide_background_overlays_section_settingPage')
+                                    ?>
+                            </div>
+                            <div class="luxe-upgrade-to-pro-container">
+                            </div>
                         </div>
+                        <div style="margin-top:20px" class="luxe-hamburger-styles-container">
+                            <div class="luxe-settings-section-menu">
+
+                                <?php
+                                //  settings_fields('luxe_mobile_menu_slide_settings');
+                                do_settings_sections('luxe_mobile_menu_typogrophy_section_settingPage')
+                                    ?>
+                            </div>
+                        </div>
+                        <div style="margin-top:20px" class="luxe-hamburger-styles-container">
+                            <div class="luxe-settings-section-menu">
+                                <table class="form-table">
+
+                                    <div class="luxe-shortcode-bar">
+                                        <div>
+                                            <tr>
+                                                <th style="width:70px;">
+                                                    <label>Shortcode</label>
+
+                                                </th>
+                                                <td>
+                                                    <input type="text" disabled value="[luxe-menu]" />
+                                                </td>
+                                                <th style="width:88px;"><label>PHP Function</label></th>
+                                                <td><input type="text" style="width:100%" disabled
+                                                        value="'<?php echo "do_shortcode('[luxe-menu]')" ?>" /></td>
+                                            </tr>
+                                        </div>
+
+                                    </div>
+                                </table>
+                            </div>
+                            <div>
+                            </div>
+                        </div>
+
                         <?php
                         submit_button();
                         ?>
@@ -181,6 +222,37 @@ function luxe_mobile_menu_slide_settings_page_callback()
         });
 
 
+    </script>
+    <script>
+
+        const animatelabels = document.querySelectorAll('.background-animation-label');
+        animatelabels.forEach(animatelabel => {
+            const input = animatelabel.querySelector('input');
+
+            animatelabel.addEventListener('click', function () {
+                animatelabels.forEach(l => l.classList.remove('checked'));
+                animatelabel.classList.add('checked');
+
+                // Optional: Manually update the checked property of the input element
+                input.checked = true;
+            });
+        });
+    </script>
+
+    <script>
+
+        const textlabels = document.querySelectorAll('.text-animation-label ');
+        textlabels.forEach(textlabel => {
+            const input = textlabel.querySelector('input');
+
+            textlabel.addEventListener('click', function () {
+                textlabels.forEach(l => l.classList.remove('checked'));
+                textlabel.classList.add('checked');
+
+                // Optional: Manually update the checked property of the input element
+                input.checked = true;
+            });
+        });
     </script>
 
     <script>

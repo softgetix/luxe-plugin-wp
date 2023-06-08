@@ -146,6 +146,14 @@
   display: block;
 }
 
+.luxe-settings-section-menu input[type="number"] {
+  width: 60px !important;
+}
+.luxe-settings-section-menu select:not(:first-child) {
+  width: 60px !important;
+  margin-top: -3px;
+  margin-left: 5px;
+}
 input[type="color"] {
   cursor: pointer;
 }
@@ -252,7 +260,7 @@ div#luxe_mobile_menu_slide_logo_image_preview {
   opacity: 0;
   left: -60px;
 }
-#luxe-nav-icon1{
+#luxe-nav-icon1 {
   overflow: hidden;
 }
 
@@ -330,7 +338,6 @@ div#luxe_mobile_menu_slide_logo_image_preview {
 }
 
 #luxe-nav-icon2.open span:nth-child(1) {
-  
   top: 50%;
 }
 
@@ -413,9 +420,8 @@ div#luxe_mobile_menu_slide_logo_image_preview {
 /* #luxe-nav-icon4 {
 } */
 
-
-.luxe-hamburger-label span{
- background-color: black;
+.luxe-hamburger-label span {
+  background-color: black;
 }
 #luxe-nav-icon4 span:nth-child(1) {
   top: 0px;
@@ -489,17 +495,104 @@ div#luxe_mobile_menu_slide_logo_image_preview {
   background-color: whitesmoke;
 }
 
-input[type="radio"]{
-    display: none;
+input[type="radio"] {
+  display: none;
 }
 
-.hamburgers_container{
-    width: 240px;
-    display: flex;
-    justify-content: space-between;
+.hamburgers_container {
+  width: 240px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
-.luxe-hamburger-label.checked{
-    outline:2px solid #0073ae;
-    color: white;
+.luxe-hamburger-label.checked {
+  outline: 2px solid #0073ae;
+  color: white;
+}
+.luxe-background-animation-name {
+  text-align: center;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+}
+.hamburgers_container.bg-animation {
+  width: 380px;
+}
+.luxe-background-animation-name-img {
+  margin: auto;
+  text-align: center;
+}
+.hamburgers_container.bg-animation {
+  text-align: center;
+}
+.background-animation-label {
+  outline: 2px solid lightgray;
+  padding: 5px;
+  height: 75px;
+  width: 70px;
+  border-radius: 10px;
+}
+.background-animation-label.checked {
+  outline: 2px solid #0073ae;
+}
+.hamburgers_container.text-animation {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.text-animation-label {
+  width: 100px;
+}
+.text-animation-label span {
+ display: inline-block;
+  background-color: white;
+  border: 1px solid lightgrey;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  padding: 5px 10px;
+  color: gray;
+  cursor: pointer;
+  text-align: center;
+}
+.text-animation-label.checked span{
+  outline: 2px solid #0073ae;
+  color: black;
+}
+.hamburgers_container.text-animation{
+  width: 290px;
+}
+.luxe-shortcode-bar{
+  display: flex;
+}
+.luxe-settings-section input[type='submit']{
+  font-size: 20px;
+    padding: 3px 20px;
+}
+.luxe-hamburger-styles-container{
+  display: grid;
+  grid-template-columns: 64% 34%;
+  column-gap: 2%;
+}
+.luxe-preview-container{
+  background-color: lightgray;
+}
+.luxe-upgrade-to-pro-container{
+  background-color: #0073ae;
+}
+.luxe-preview-container{
+  background-image: url('../images/Arrow.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  position: relative;
+}
+span.luxe-preview-badge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px 25px;
 }

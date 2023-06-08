@@ -1,6 +1,12 @@
 <?php
+global $size_units;
+$size_units = array(
+    'px' => 'PX',
+    'vw' => 'VW',
+    'em' => 'EM',
+    'rem' => 'REM'
 
-
+);
 // Callback function for the colors section
 function luxe_mobile_menu_slide_colors_section_callback()
 {
@@ -100,41 +106,12 @@ function luxe_mobile_menu_slide_hamburger_line_gap_field_callback()
     $hamburger_line_gap = get_option('luxe_mobile_menu_slide_hamburger_line_gap', '5px');
     echo '<input type="text" name="luxe_mobile_menu_slide_hamburger_line_gap" value="' . esc_attr($hamburger_line_gap) . '">';
 }
-// Callback function for the dropdown container submenu font color field
-function luxe_mobile_menu_slide_container_submenu_font_color_field_callback()
-{
-    $container_submenu_font_color = get_option('luxe_mobile_menu_slide_container_submenu_font_color', '#ffffff');
-    echo '<input type="color" name="luxe_mobile_menu_slide_container_submenu_font_color" value="' . esc_attr($container_submenu_font_color) . '">';
-}
-// Callback function for the dropdown container font size
-function luxe_mobile_menu_slide_container_font_size_field_callback()
-{
-    $container_font_size = get_option('luxe_mobile_menu_slide_container_font_size', '25px');
-    echo '<input placeholder="ex : 15px or 2rem" type="text" name="luxe_mobile_menu_slide_container_font_size" value="' . esc_attr($container_font_size) . '">';
-}
 
-// Humburger type like round and normal 
+// including the submenu callback file
+require plugin_dir_path(__FILE__ ). '__parts/callback/submenu.php';
 
-function luxe_mobile_menu_slide_container_font_animation_field_callback()
-{
-    $text_animation = get_option('luxe_mobile_menu_slide_container_font_animation', 'Animation 1');
-
-    // Define the available types for the dropdown
-    $types = array(
-        'animation_none' => 'Fade In',
-        'animation_one' => 'Animation 1',
-        'animation_two' => 'Animation 2',
-        'animation_three' => 'Animation 3',
-    );
-
-    echo '<select name="luxe_mobile_menu_slide_container_font_animation">';
-    foreach ($types as $type_key => $type_label) {
-        $selected = selected($text_animation, $type_key, false);
-        echo '<option value="' . esc_attr($type_key) . '"' . $selected . '>' . esc_html($type_label) . '</option>';
-    }
-    echo '</select>';
-}
-
+//including the menu callback file
+require plugin_dir_path(__FILE__ ). '__parts/callback/menu.php';
 
 // Humburger type like round and normal 
 
@@ -158,44 +135,38 @@ function luxe_mobile_menu_slide_select_menu_field_callback()
 
 function luxe_mobile_menu_slide_toggle_animation_field_callback()
 {
-    $toggle_animation = get_option('luxe_mobile_menu_slide_toggle_animation', 'none');
+    $toggle_animation = get_option('luxe_mobile_menu_slide_toggle_animation', 'toggle_container_animation4');
 
     // Define the available toggle animations for the dropdown
-    $animations = array(
-        'toggle_container_animation4' => 'Fade Effect',
+    $bganimations = array(
+        'toggle_container_animation4' => 'Fade',
         // 'toggle_container_animation1' => 'curtain Open Effect',
-        'toggle_container_animation2' => 'Slide From Left',
-        'toggle_container_animation3' => 'Slide From Up',
+        'toggle_container_animation2' => 'Slide Left',
+        'toggle_container_animation3' => 'Slide Up',
 
-        'toggle_container_animation-down' => 'Slide From Down',
+        'toggle_container_animation-down' => 'Slide Down',
 
 
         // Add more animation options as needed
     );
 
-    // echo '<select name="luxe_mobile_menu_slide_toggle_animation">';
-    // foreach ($animations as $animation_key => $animation_label) {
-    //     $selected = selected($toggle_animation, $animation_key, false);
-    //     echo '<option value="' . esc_attr($animation_key) . '"' . $selected . '>' . esc_html($animation_label) . '</option>';
-    // }
-    // echo '</select>';
 
-    $html = '<div class="hamburgers_container">';
+    $html = '<div class="hamburgers_container bg-animation">';
 
     // echo '<select name="luxe_mobile_menu_slide_hamburger_icon_styles">';
     $no = 1;
-    $checked_class = '';
-    foreach ($animations as $animation_key => $animation_label) {
-        if ($animation_key == $toggle_animation) {
-            $checked_class = 'checked';
+    $bgchecked_class = '';
+    foreach ($bganimations as $bganimation_key => $bganimation_label) {
+        if ($bganimation_key == $toggle_animation) {
+            $bgchecked_class = 'checked';
         }
-        $string = '<label for="' . $animation_key . '" class="" ' . $checked_class . '">
-  <img  src="'.plugins_url('/assets/images/'.$animation_key.'.png', __FILE__).'" width="40" height="40" />
-  <input type="radio" id="' . $animation_key . '" name="luxe_mobile_menu_slide_toggle_animation" value="' . esc_attr($animation_key) . '" />
+        $string = '<label for="' . $bganimation_key . '" class="background-animation-label ' . $bgchecked_class . '">
+  <img  src="' . plugins_url('/assets/images/' . $bganimation_key . '.png', __FILE__) . '" class="luxe-background-animation-name-img" width="40" height="40" /><span class="luxe-background-animation-name">' . $bganimation_label . '</span>
+  <input type="radio" id="' . $bganimation_key . '" ' . $bgchecked_class . ' name="luxe_mobile_menu_slide_toggle_animation" value="' . esc_attr($bganimation_key) . '" />
       </label> ';
         $html .= $string;
         $no++;
-        $checked_class = '';
+        $bgchecked_class = '';
     }
     $html .= '</div>';
     echo $html;
@@ -218,7 +189,7 @@ function luxe_mobile_menu_slide_hamburger_icon_styles_field_callback()
         'style_4' => 'Style 4',
         // Add more animation options as needed
     );
-    $html = '<div class="hamburgers_container">';
+    $html = '<div class="hamburgers_container ">';
 
     // echo '<select name="luxe_mobile_menu_slide_hamburger_icon_styles">';
     $no = 1;
@@ -235,7 +206,7 @@ function luxe_mobile_menu_slide_hamburger_icon_styles_field_callback()
             <span></span>
             <span></span>
   </div>
-  <input type="radio" id="' . $animation_key . '" name="luxe_mobile_menu_slide_hamburger_icon_styles" value="' . esc_attr($animation_key) . '" />
+  <input type="radio" id="' . $animation_key . '" name="luxe_mobile_menu_slide_hamburger_icon_styles" value="' . esc_attr($animation_key) . '" ' . $checked_class . ' />
       </label> ';
         $html .= $string;
         $no++;

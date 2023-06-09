@@ -4,12 +4,20 @@ function luxe_mobile_menu_slide_settings_page()
 {
     add_menu_page(
         'Luxe Mobile Menu Slide Settings',
-        'luxe- at the start',
+        'Luxe Plugins',
         'manage_options',
         'luxe-mobile-menu-slide-settings',
         'luxe_mobile_menu_slide_settings_page_callback',
         'dashicons-menu',
         99
+    );
+    add_submenu_page(
+        'luxe-mobile-menu-slide-settings',
+        'Mobile Menu',
+        'Mobile Menu',
+        'manage_options',
+        'luxe-mobile-menu-slide-settings',
+        'luxe_mobile_menu_slide_settings_page_callback',
     );
     add_submenu_page(
         'luxe-mobile-menu-slide-settings',
@@ -54,12 +62,13 @@ function luxe_mobile_menu_slide_settings_page_callback()
         <div class="luxe-settings-wrap">
             <!-- <h1 class="wp-heading-inline">Luxe Mobile Menu Settings</h1> -->
             <h2 class="nav-tab-wrapper">
-                <a href="?page=luxe-mobile-menu-slide-settings&tab=settings" class="nav-tab <?php if ($current_tab === 'settings')
+                <a href="?page=luxe-mobile-menu-slide-settings" class="nav-tab <?php if ($current_tab === 'settings')
                     echo 'nav-tab-active'; ?>">Mobile Menu</a>
                 <a href="?page=luxe-mobile-menu-slide-settings&tab=styles" class="nav-tab <?php if ($current_tab === 'styles')
-                    echo 'nav-tab-active'; ?>">Styles</a>
-                <a href="?page=luxe-mobile-menu-slide-settings&tab=shortcode" class="nav-tab <?php if ($current_tab === 'shortcode')
-                    echo 'nav-tab-active'; ?>">Shortcode</a>
+                    echo 'nav-tab-active'; ?>">Licence</a>
+                <a href="?page=luxe-mobile-menu-slide-settings&tab=shortcode" style="color:white; background-color:#2271b1"
+                    class="nav-tab <?php if ($current_tab === 'shortcode')
+                        echo 'nav-tab-active'; ?>">Upgrade to Pro</a>
             </h2>
             <?php
             if ($current_tab === 'settings') {
@@ -67,7 +76,7 @@ function luxe_mobile_menu_slide_settings_page_callback()
                 <div class="luxe-settings-section active">
 
                     <form method="post" action="options.php">
-                        <div class="luxe-settings-section-menu">
+                        <div class="luxe-settings-section-menu luxe-choose-menu">
                             <?php
 
                             settings_fields('luxe_mobile_menu_slide_settings_settingPage');
@@ -83,11 +92,15 @@ function luxe_mobile_menu_slide_settings_page_callback()
                                 do_settings_sections('luxe_mobile_menu_slide_a_settings_settingPage');
                                 ?>
                             </div>
-                            <div class="luxe-preview-container">
-                                <span class="luxe-preview-badge">
-                                    Preview
-                                </span>
-                            </div>
+                            <!-- starting of preview container -->
+                            <!-- adding the peview file  -->
+
+                            <?php
+
+                            require plugin_dir_path(__FILE__) . '__parts/preview_container/preview.php'
+
+                                ?>
+
                         </div>
                         <div style="margin-top:20px" class="luxe-hamburger-styles-container">
                             <div class="luxe-settings-section-menu">
@@ -99,6 +112,10 @@ function luxe_mobile_menu_slide_settings_page_callback()
                                     ?>
                             </div>
                             <div class="luxe-upgrade-to-pro-container">
+                                <div>
+                                    <span>Promotion For Upgrade</span>
+                                </div>
+
                             </div>
                         </div>
                         <div style="margin-top:20px" class="luxe-hamburger-styles-container">

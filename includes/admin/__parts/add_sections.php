@@ -2,6 +2,7 @@
 
 // Add setting section
 add_settings_section('luxe_mobile_menu_slide_colors_section', 'Customize styles', 'luxe_mobile_menu_slide_colors_section_callback', 'luxe_mobile_menu_slide_settings');
+
 add_settings_section('luxe_mobile_menu_slide_settings_section', 'Customize Settings', 'luxe_mobile_menu_slide_colors_section_callback', 'luxe_mobile_menu_slide_settings_settingPage');
 
 
@@ -14,3 +15,6 @@ add_settings_section('luxe_mobile_menu_slide_hamburger_section', 'Hamburger Styl
 add_settings_section('luxe_mobile_menu_slide_background_overlays_section', 'Background overlays styles', 'luxe_mobile_menu_slide_hamburger_section_callback', 'luxe_mobile_menu_slide_background_overlays_section_settingPage');
 //   section for menu typography
 add_settings_section('luxe_mobile_menu_typogrophy_section', 'Typography styles', 'luxe_mobile_menu_slide_hamburger_section_callback', 'luxe_mobile_menu_typogrophy_section_settingPage');
+
+
+

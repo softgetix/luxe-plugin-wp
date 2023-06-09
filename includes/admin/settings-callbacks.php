@@ -23,7 +23,7 @@ function luxe_mobile_menu_slide_hamburger_color_field_callback()
     $hamburger_class = ($hamburger_type !== 'normal') ? 'hamburger-' . $hamburger_type : '';
 
     echo '<div class="' . esc_attr($hamburger_class) . '">';
-    echo '<input type="color" name="luxe_mobile_menu_slide_hamburger_color" value="' . esc_attr($hamburger_color) . '">';
+    echo '<input type="color" id="luxe_mobile_menu_slide_hamburger_color" name="luxe_mobile_menu_slide_hamburger_color" value="' . esc_attr($hamburger_color) . '">';
     echo '</div>';
 }
 // Callback function for the hamburger icon position field
@@ -39,7 +39,7 @@ function luxe_mobile_menu_slide_hamburger_icon_position_field_callback()
         'center' => 'Position middle',
     );
 
-    echo '<select name="luxe_mobile_menu_slide_hamburger_icon_position">';
+    echo '<select name="luxe_mobile_menu_slide_hamburger_icon_position" id="luxe_mobile_menu_slide_hamburger_icon_position">';
     foreach ($types as $type_key => $type_label) {
         $selected = selected($hamburger_icon_position, $type_key, false);
         echo '<option value="' . esc_attr($type_key) . '"' . $selected . '>' . esc_html($type_label) . '</option>';
@@ -50,25 +50,25 @@ function luxe_mobile_menu_slide_hamburger_icon_position_field_callback()
 function luxe_mobile_menu_slide_hamburger_width_field_callback()
 {
     $hamburger_size = get_option('luxe_mobile_menu_slide_hamburger_width', '15px');
-    echo '<input placeholder="ex : 15px or 2rem" type="text" name="luxe_mobile_menu_slide_hamburger_width" value="' . esc_attr($hamburger_size) . '">';
+    echo '<input placeholder="ex : 15px or 2rem" type="text" id="luxe_mobile_menu_slide_hamburger_width" name="luxe_mobile_menu_slide_hamburger_width" value="' . esc_attr($hamburger_size) . '">';
 }
 function luxe_mobile_menu_slide_hamburger_height_field_callback()
 {
     $hamburger_size = get_option('luxe_mobile_menu_slide_hamburger_height', '15px');
-    echo '<input placeholder="ex : 15px or 2rem" type="text" name="luxe_mobile_menu_slide_hamburger_height" value="' . esc_attr($hamburger_size) . '">';
+    echo '<input placeholder="ex : 15px or 2rem" type="text" id="luxe_mobile_menu_slide_hamburger_height" name="luxe_mobile_menu_slide_hamburger_height" value="' . esc_attr($hamburger_size) . '">';
 }
 // Callback function for the hamburger padding
 function luxe_mobile_menu_slide_hamburger_padding_field_callback()
 {
     $hamburger_padding = get_option('luxe_mobile_menu_slide_hamburger_padding', '0');
-    echo '<input placeholder="ex : 15px or 2rem" type="text" name="luxe_mobile_menu_slide_hamburger_padding" value="' . esc_attr($hamburger_padding) . '">';
+    echo '<input placeholder="ex : 15px or 2rem" type="text" name="luxe_mobile_menu_slide_hamburger_padding" id="luxe_mobile_menu_slide_hamburger_padding" value="' . esc_attr($hamburger_padding) . '">';
 }
 
 // Callback function for the hamburger border radius
 function luxe_mobile_menu_slide_hamburger_border_radius_field_callback()
 {
     $hamburger_border_radius = get_option('luxe_mobile_menu_slide_hamburger_border_radius', '0px');
-    echo '<input placeholder="ex : 15px or 15%" type="text" name="luxe_mobile_menu_slide_hamburger_border_radius" value="' . esc_attr($hamburger_border_radius) . '">';
+    echo '<input placeholder="ex : 15px or 15%" type="text" name="luxe_mobile_menu_slide_hamburger_border_radius" id="luxe_mobile_menu_slide_hamburger_border_radius" value="' . esc_attr($hamburger_border_radius) . '">';
 }
 
 
@@ -76,7 +76,7 @@ function luxe_mobile_menu_slide_hamburger_border_radius_field_callback()
 function luxe_mobile_menu_slide_background_color_field_callback()
 {
     $background_color = get_option('luxe_mobile_menu_slide_background_color', '#ffffff');
-    echo '<input type="color" name="luxe_mobile_menu_slide_background_color" value="' . esc_attr($background_color) . '">';
+    echo '<input type="color" name="luxe_mobile_menu_slide_background_color" id="luxe_mobile_menu_slide_background_color" value="' . esc_attr($background_color) . '">';
 }
 
 
@@ -98,20 +98,25 @@ function luxe_mobile_menu_slide_container_font_color_field_callback()
 function luxe_mobile_menu_slide_hamburger_line_thickness_field_callback()
 {
     $hamburger_line_thickness = get_option('luxe_mobile_menu_slide_hamburger_line_thickness', '2px');
-    echo '<input type="text" name="luxe_mobile_menu_slide_hamburger_line_thickness" value="' . esc_attr($hamburger_line_thickness) . '">';
+    echo '<input type="text" id="luxe_mobile_menu_slide_hamburger_line_thickness" name="luxe_mobile_menu_slide_hamburger_line_thickness" value="' . esc_attr($hamburger_line_thickness) . '">';
 
+}
+function luxe_mobile_menu_slide_hamburger_line_length_field_callback()
+{
+    $hamburger_line_length = get_option('luxe_mobile_menu_slide_hamburger_line_length', '5');
+    echo '<input style="width:100px !important" type="number" id="luxe_mobile_menu_slide_hamburger_line_length" name="luxe_mobile_menu_slide_hamburger_line_length" value="' . esc_attr($hamburger_line_length) . '">';
 }
 function luxe_mobile_menu_slide_hamburger_line_gap_field_callback()
 {
-    $hamburger_line_gap = get_option('luxe_mobile_menu_slide_hamburger_line_gap', '5px');
-    echo '<input type="text" name="luxe_mobile_menu_slide_hamburger_line_gap" value="' . esc_attr($hamburger_line_gap) . '">';
+    $hamburger_line_gap = get_option('luxe_mobile_menu_slide_hamburger_line_gap', '5');
+    echo '<input style="width:100px !important" type="number" id="luxe_mobile_menu_slide_hamburger_line_gap" name="luxe_mobile_menu_slide_hamburger_line_gap" value="' . esc_attr($hamburger_line_gap) . '">';
 }
 
 // including the submenu callback file
-require plugin_dir_path(__FILE__ ). '__parts/callback/submenu.php';
+require plugin_dir_path(__FILE__) . '__parts/callback/submenu.php';
 
 //including the menu callback file
-require plugin_dir_path(__FILE__ ). '__parts/callback/menu.php';
+require plugin_dir_path(__FILE__) . '__parts/callback/menu.php';
 
 // Humburger type like round and normal 
 

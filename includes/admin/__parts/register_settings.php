@@ -9,6 +9,7 @@ register_setting('luxe_mobile_menu_slide_settings_settingPage', 'luxe_mobile_men
 register_setting('luxe_mobile_menu_slide_settings_settingPage', 'luxe_mobile_menu_slide_hamburger_width');
 register_setting('luxe_mobile_menu_slide_settings_settingPage', 'luxe_mobile_menu_slide_hamburger_height');
 register_setting('luxe_mobile_menu_slide_settings_settingPage', 'luxe_mobile_menu_slide_hamburger_line_thickness');
+register_setting('luxe_mobile_menu_slide_settings_settingPage', 'luxe_mobile_menu_slide_hamburger_line_length');
 register_setting('luxe_mobile_menu_slide_settings_settingPage', 'luxe_mobile_menu_slide_hamburger_line_gap');
 // Register setting for dropdown container
 // the name in secound parameter "luxe_mobile_menu_slide_container_font_color" passing in mobile-menu.php file

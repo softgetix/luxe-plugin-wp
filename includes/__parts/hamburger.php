@@ -1,26 +1,40 @@
+<?php
+$luxe_mobile_menu_slide_hamburger_line_gap = get_option('luxe_mobile_menu_slide_hamburger_line_gap', '80');
+$luxe_mobile_menu_slide_hamburger_line_length = get_option('luxe_mobile_menu_slide_hamburger_line_length', '80');
+?>
 <style>
     .luxe-hamburger-label {
         width:
-            <?php esc_html_e($hamburger_size) ?>
+            <?php echo esc_attr($hamburger_width).'px' ?>
         ;
         height:
-            <?php esc_html_e($hamburger_size) ?>
+            <?php echo esc_attr($hamburger_height).'px' ?>
         ;
     }
 
-    #luxe-nav-icon1:not(.open),
-    #luxe-nav-icon2:not(.open),
-    #luxe-nav-icon3:not(.open),
+    #luxe-nav-icon1,
+    #luxe-nav-icon2,
+    #luxe-nav-icon3,
     #luxe-nav-icon4:not(.open) {
-        height: 60%;
-        width: 84%;
+        height:
+            <?php esc_html_e($luxe_mobile_menu_slide_hamburger_line_gap * 10) ?>%;
+
+        width:
+            <?php esc_html_e($luxe_mobile_menu_slide_hamburger_line_length * 10) ?>%;
+    }
+
+    label.luxe-hamburger-label span {
+        background-color:
+            <?php echo esc_attr($hamburger_color) ?>
+        ;
+        height:
+            <?php echo esc_attr($luxe_hamburger_line_thickness.'px'); ?>
     }
 </style>
 <div class="luxe-hamburger-container" style="justify-content: <?php echo $luxe_container_position; ?>;">
     <label for="hamburger-input" class="luxe-hamburger-label"
-        style="background-color: <?php echo esc_attr($background_color); ?>; border-radius: <?php echo esc_attr($hamburger_border_radius); ?>;padding:<?php echo esc_attr($hamburger_padding) ?>">
-        <!-- <div class="luxe-hamburger"
-                        style="background-color: <?php echo esc_attr($background_color); ?>;border-radius: <?php echo esc_attr($hamburger_border_radius); ?>"> -->
+        style="background-color: <?php echo esc_attr($background_color); ?>; border-radius: <?php echo esc_attr($hamburger_border_radius.'%'); ?>;padding:<?php echo esc_attr($hamburger_padding.'px') ?>">
+      
 
         <?php if ($hamburger_styles == 'style_1') {
 
@@ -55,6 +69,6 @@
 
             </div>
         <?php } ?>
-        <!-- </div> -->
+    
     </label>
 </div>

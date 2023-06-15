@@ -22,7 +22,7 @@ class LuxeMobileMenuSlide
 
         // Add mobile menu toggle functionality
         add_action('wp_footer', array($this, 'toggle_menu'));
-        add_action('wp_head', array($this, 'display_menu'));
+        // add_action('wp_head', array($this, 'display_menu'));
 
         // Add shortcode to show mobile menu
         add_shortcode('luxe', array($this, 'luxe_shortcode'));
@@ -125,6 +125,8 @@ class LuxeMobileMenuSlide
                             $('ul#luxe-menu-primary_navigation').toggleClass('text-animation2');
                         } else if (textAnimation === 'animation_three') {
                             $('ul#luxe-menu-primary_navigation').toggleClass('text-animation3');
+                        } else if (textAnimation === 'fade_up') {
+                            $('ul#luxe-menu-primary_navigation').toggleClass('text-animation-fade-up');
                         }
                         else { }
                 });

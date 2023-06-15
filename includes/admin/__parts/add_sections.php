@@ -17,4 +17,6 @@ add_settings_section('luxe_mobile_menu_slide_background_overlays_section', 'Back
 add_settings_section('luxe_mobile_menu_typogrophy_section', 'Typography styles', 'luxe_mobile_menu_slide_hamburger_section_callback', 'luxe_mobile_menu_typogrophy_section_settingPage');
 
 
+// add_setting_section for licence
+add_settings_section('luxe_mobile_menu_licence_section', 'Licence Details', 'luxe_mobile_menu_slide_hamburger_section_callback', 'luxe-mobile-menu-slide-licence');
 

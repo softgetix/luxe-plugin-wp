@@ -87,3 +87,6 @@ add_settings_field('luxe_mobile_menu_slide_select_menu_field', 'Choose a Menu', 
 
 // Add setting field for replace luxe heaader from desktop
 // add_settings_field('luxe_mobile_menu_slide_replace_luxe_header_desktop_field', 'Hide luxe header from desktop', 'luxe_mobile_menu_slide_replace_luxe_header_desktop_field_callback', 'luxe_mobile_menu_slide_settings_settingPage', 'luxe_mobile_menu_slide_settings_section');
+
+
+add_settings_field('luxe_mobile_menu_slide_licence_field', 'Enter Your Licence:', 'luxe_mobile_menu_slide_licence_key_callback', 'luxe-mobile-menu-slide-licence', 'luxe_mobile_menu_licence_section');

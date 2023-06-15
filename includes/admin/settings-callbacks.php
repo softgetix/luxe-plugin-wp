@@ -17,14 +17,22 @@ function luxe_mobile_menu_slide_colors_section_callback()
 function luxe_mobile_menu_slide_hamburger_color_field_callback()
 {
     $hamburger_color = get_option('luxe_mobile_menu_slide_hamburger_color', '#000000');
-    $hamburger_type = get_option('luxe_mobile_menu_slide_hamburger_type', 'normal');
 
     // Add a CSS class based on the selected type
-    $hamburger_class = ($hamburger_type !== 'normal') ? 'hamburger-' . $hamburger_type : '';
+    echo "<style>
+   .luxe-line-color .pickr{
+   background-color:$hamburger_color;
+ }
+   </style>";
 
-    echo '<div class="' . esc_attr($hamburger_class) . '">';
-    echo '<input type="color" id="luxe_mobile_menu_slide_hamburger_color" name="luxe_mobile_menu_slide_hamburger_color" value="' . esc_attr($hamburger_color) . '">';
+    echo '<div class="luxe-line-color" id="luxe-color1">';
+    echo "<div id='colorPickerField1' class='color-picker-field' style='background-color:" . esc_attr($hamburger_color) . "'></div>";
+    echo " <label>
+   <input type='hidden' id='colorValue1' name='luxe_mobile_menu_slide_hamburger_color' value=" . esc_attr($hamburger_color) . ">
+ </label>";
     echo '</div>';
+
+
 }
 // Callback function for the hamburger icon position field
 function luxe_mobile_menu_slide_hamburger_icon_position_field_callback()
@@ -49,26 +57,26 @@ function luxe_mobile_menu_slide_hamburger_icon_position_field_callback()
 // Callback function for the hamburger font size
 function luxe_mobile_menu_slide_hamburger_width_field_callback()
 {
-    $hamburger_size = get_option('luxe_mobile_menu_slide_hamburger_width', '15px');
-    echo '<input placeholder="ex : 15px or 2rem" type="text" id="luxe_mobile_menu_slide_hamburger_width" name="luxe_mobile_menu_slide_hamburger_width" value="' . esc_attr($hamburger_size) . '">';
+    $hamburger_size = get_option('luxe_mobile_menu_slide_hamburger_width', '15');
+    echo '<input placeholder="" type="number" style="width:100px!important" id="luxe_mobile_menu_slide_hamburger_width" name="luxe_mobile_menu_slide_hamburger_width" value="' . esc_attr($hamburger_size) . '">';
 }
 function luxe_mobile_menu_slide_hamburger_height_field_callback()
 {
-    $hamburger_size = get_option('luxe_mobile_menu_slide_hamburger_height', '15px');
-    echo '<input placeholder="ex : 15px or 2rem" type="text" id="luxe_mobile_menu_slide_hamburger_height" name="luxe_mobile_menu_slide_hamburger_height" value="' . esc_attr($hamburger_size) . '">';
+    $hamburger_size = get_option('luxe_mobile_menu_slide_hamburger_height', '15');
+    echo '<input placeholder="" style="width:100px!important" type="number" id="luxe_mobile_menu_slide_hamburger_height" name="luxe_mobile_menu_slide_hamburger_height" value="' . esc_attr($hamburger_size) . '">';
 }
 // Callback function for the hamburger padding
 function luxe_mobile_menu_slide_hamburger_padding_field_callback()
 {
     $hamburger_padding = get_option('luxe_mobile_menu_slide_hamburger_padding', '0');
-    echo '<input placeholder="ex : 15px or 2rem" type="text" name="luxe_mobile_menu_slide_hamburger_padding" id="luxe_mobile_menu_slide_hamburger_padding" value="' . esc_attr($hamburger_padding) . '">';
+    echo '<input placeholder="" type="number" style="width:100px!important" name="luxe_mobile_menu_slide_hamburger_padding" id="luxe_mobile_menu_slide_hamburger_padding" value="' . esc_attr($hamburger_padding) . '">';
 }
 
 // Callback function for the hamburger border radius
 function luxe_mobile_menu_slide_hamburger_border_radius_field_callback()
 {
-    $hamburger_border_radius = get_option('luxe_mobile_menu_slide_hamburger_border_radius', '0px');
-    echo '<input placeholder="ex : 15px or 15%" type="text" name="luxe_mobile_menu_slide_hamburger_border_radius" id="luxe_mobile_menu_slide_hamburger_border_radius" value="' . esc_attr($hamburger_border_radius) . '">';
+    $hamburger_border_radius = get_option('luxe_mobile_menu_slide_hamburger_border_radius', '0');
+    echo '<input placeholder="" type="number" style="width:100px !important" name="luxe_mobile_menu_slide_hamburger_border_radius" id="luxe_mobile_menu_slide_hamburger_border_radius" value="' . esc_attr($hamburger_border_radius) . '">';
 }
 
 
@@ -76,7 +84,21 @@ function luxe_mobile_menu_slide_hamburger_border_radius_field_callback()
 function luxe_mobile_menu_slide_background_color_field_callback()
 {
     $background_color = get_option('luxe_mobile_menu_slide_background_color', '#ffffff');
-    echo '<input type="color" name="luxe_mobile_menu_slide_background_color" id="luxe_mobile_menu_slide_background_color" value="' . esc_attr($background_color) . '">';
+    // echo '<input type="color" name="luxe_mobile_menu_slide_background_color" id="luxe_mobile_menu_slide_background_color" value="' . esc_attr($background_color) . '">';
+
+
+    echo "<style>
+   .luxe-ham-bg-color .pickr{
+   background-color:$background_color;
+ }
+   </style>";
+
+    echo '<div class="luxe-ham-bg-color" id="luxe-color2">';
+    echo "<div id='colorPickerField2' class='color-picker-field' style='background-color:" . esc_attr($background_color) . "'></div>";
+    echo " <label>
+   <input type='hidden' id='colorValue2' name='luxe_mobile_menu_slide_background_color' value=" . esc_attr($background_color) . ">
+ </label>";
+    echo '</div>';
 }
 
 
@@ -84,32 +106,59 @@ function luxe_mobile_menu_slide_background_color_field_callback()
 function luxe_mobile_menu_slide_container_background_color_field_callback()
 {
     $container_background_color = get_option('luxe_mobile_menu_slide_container_background_color', '#ffffff');
-    echo '<input type="color" name="luxe_mobile_menu_slide_container_background_color" value="' . esc_attr($container_background_color) . '">';
+    echo "<style>
+    .luxe-ham-bg-color3 .pickr{
+    background-color:$container_background_color;
+  }
+    </style>";
+
+    echo '<div class="luxe-ham-bg-color3" id="luxe-color3">';
+    echo "<div id='colorPickerField3' class='color-picker-field' style='background-color:" . esc_attr($container_background_color) . "'></div>";
+    echo " <label>
+    <input type='hidden' id='colorValue3' name='luxe_mobile_menu_slide_container_background_color' value=" . esc_attr($container_background_color) . ">
+  </label>";
+    echo '</div>';
+
+
+    // echo '<input type="color" name="luxe_mobile_menu_slide_container_background_color" value="' . esc_attr($container_background_color) . '">';
 }
 
 // Callback function for the dropdown container font color field
 function luxe_mobile_menu_slide_container_font_color_field_callback()
 {
     $container_font_color = get_option('luxe_mobile_menu_slide_container_font_color', '#ffffff');
-    echo '<input type="color" name="luxe_mobile_menu_slide_container_font_color" value="' . esc_attr($container_font_color) . '">';
+    // echo '<input type="color" name="luxe_mobile_menu_slide_container_font_color" value="' . esc_attr($container_font_color) . '">';
+
+    echo "<style>
+    .luxe-ham-bg-color4 .pickr{
+    background-color:$container_font_color;
+  }
+    </style>";
+
+    echo '<div class="luxe-ham-bg-color4" id="luxe-color4">';
+    echo "<div id='colorPickerField4' class='color-picker-field' style='background-color:" . esc_attr($container_font_color) . "'></div>";
+    echo " <label>
+    <input type='hidden' id='colorValue4' name='luxe_mobile_menu_slide_container_font_color' value=" . esc_attr($container_font_color) . ">
+  </label>";
+    echo '</div>';
 }
 // callback function for  line thickness
 
 function luxe_mobile_menu_slide_hamburger_line_thickness_field_callback()
 {
-    $hamburger_line_thickness = get_option('luxe_mobile_menu_slide_hamburger_line_thickness', '2px');
-    echo '<input type="text" id="luxe_mobile_menu_slide_hamburger_line_thickness" name="luxe_mobile_menu_slide_hamburger_line_thickness" value="' . esc_attr($hamburger_line_thickness) . '">';
+    $hamburger_line_thickness = get_option('luxe_mobile_menu_slide_hamburger_line_thickness', '2');
+    echo '<input type="number" style="width:100px !important" id="luxe_mobile_menu_slide_hamburger_line_thickness" name="luxe_mobile_menu_slide_hamburger_line_thickness" value="' . esc_attr($hamburger_line_thickness) . '">';
 
 }
 function luxe_mobile_menu_slide_hamburger_line_length_field_callback()
 {
     $hamburger_line_length = get_option('luxe_mobile_menu_slide_hamburger_line_length', '5');
-    echo '<input style="width:100px !important" type="number" id="luxe_mobile_menu_slide_hamburger_line_length" name="luxe_mobile_menu_slide_hamburger_line_length" value="' . esc_attr($hamburger_line_length) . '">';
+    echo '<input style="width:100px !important" step="0.1" type="number" id="luxe_mobile_menu_slide_hamburger_line_length" name="luxe_mobile_menu_slide_hamburger_line_length" value="' . esc_attr($hamburger_line_length) . '">';
 }
 function luxe_mobile_menu_slide_hamburger_line_gap_field_callback()
 {
     $hamburger_line_gap = get_option('luxe_mobile_menu_slide_hamburger_line_gap', '5');
-    echo '<input style="width:100px !important" type="number" id="luxe_mobile_menu_slide_hamburger_line_gap" name="luxe_mobile_menu_slide_hamburger_line_gap" value="' . esc_attr($hamburger_line_gap) . '">';
+    echo '<input style="width:100px !important" step="0.1" type="number" id="luxe_mobile_menu_slide_hamburger_line_gap" name="luxe_mobile_menu_slide_hamburger_line_gap" value="' . esc_attr($hamburger_line_gap) . '">';
 }
 
 // including the submenu callback file
@@ -146,10 +195,11 @@ function luxe_mobile_menu_slide_toggle_animation_field_callback()
     $bganimations = array(
         'toggle_container_animation4' => 'Fade',
         // 'toggle_container_animation1' => 'curtain Open Effect',
-        'toggle_container_animation2' => 'Slide Left',
-        'toggle_container_animation3' => 'Slide Up',
+        'toggle_container_animation2' => 'Slide Right',
+        'toggle_container_animation3' => 'Slide Down',
 
-        'toggle_container_animation-down' => 'Slide Down',
+        'toggle_container_animation-down' => 'Slide Up',
+        'toggle_container_animation-left' => 'Slide Left',
 
 
         // Add more animation options as needed
@@ -243,6 +293,17 @@ function luxe_mobile_menu_slide_hamburger_section_callback($section)
 {
     // $section_title = $section['title'];
     // echo '<h2 class="custom-section-heading">' . esc_html($section_title) . '</h2>';
+}
+
+function luxe_mobile_menu_slide_licence_key_callback()
+{
+    $licence_key = get_option('luxe_mobile_menu_slide_licence_field', '');
+
+
+    echo '<input type="text" name="luxe_mobile_menu_slide_licence_field" style="width:200px" value="' . $licence_key . '"/>';
+
+
+    echo '<label class="luxe-dashboard-label"> or </label> <a href="' . admin_url('nav-menus.php?action=edit&menu=0') . '">Buy a licence</a>';
 }
 
 ?>

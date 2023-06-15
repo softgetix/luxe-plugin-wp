@@ -5,7 +5,7 @@
     <div style="width:100%; margin-top:20px">
         <div class="luxe-preview-hamburger-container">
             <div class="luxe-preview-hamburger">
-                <div class="luxe-hamburger-line-container">
+                <div class="luxe-hamburger-line-container" id="luxe-hamburger-line-container">
                     <span class="luxe-preview-hamburger-lines"></span>
                     <span class="luxe-preview-hamburger-lines"></span>
                     <span class="luxe-preview-hamburger-lines"></span>
@@ -21,11 +21,11 @@
 <script>
     //function for update the line thickness
     function luxe_update_hamburger_line_thickness(line_thickness) {
-        jQuery('.luxe-preview-hamburger-lines').css('height', line_thickness);
+        jQuery('.luxe-preview-hamburger-lines').css('height', line_thickness+'px');
     }
     // function for update the border radius
     function luxe_update_border_radius(radius) {
-        jQuery('.luxe-preview-hamburger').css('border-radius', radius);
+        jQuery('.luxe-preview-hamburger').css('border-radius', radius+'%');
     }
     //function for update the hamburger padding
     function luxe_update_hamburger_padding(padding) {
@@ -74,7 +74,7 @@
         luxe_update_hamburger_height(luxe_hamburger_height);
 
         // get the hamburger backgroud color 
-        luxe_hamburger_bgcolor = jQuery('#luxe_mobile_menu_slide_background_color').val();
+        luxe_hamburger_bgcolor = jQuery('#colorValue2').val();
         // update the bg color on load
         luxe_update_hamburger_bg_color(luxe_hamburger_bgcolor);
 
@@ -87,7 +87,7 @@
         luxe_update_border_radius(luxe_hamburger_border_radius);
 
         // get the hamburger line color
-        luxe_hamburger_line_color = jQuery('#luxe_mobile_menu_slide_hamburger_color').val();
+        luxe_hamburger_line_color = jQuery('#colorValue1').val();
         // update the hamburger line color
         luxe_update_hamburger_line_color(luxe_hamburger_line_color);
 
@@ -111,7 +111,7 @@
         luxe_update_mobile_menu_slide_hamburger_icon_position(luxe_hamburger_menu_icon_position);
     });
     // getting the hamburger line color on change
-    jQuery('#luxe_mobile_menu_slide_hamburger_color').change(function () {
+    jQuery('#colorValue1').change(function () {
         hamburger_line_color = jQuery(this).val();
         luxe_update_hamburger_line_color(hamburger_line_color);
     });
@@ -121,12 +121,12 @@
         luxe_update_border_radius(hamburger_border_radius);
     });
     // getting the hamburger color on the time of change 
-    jQuery('#luxe_mobile_menu_slide_hamburger_color').change(function () {
+    jQuery('#colorValue1').change(function () {
         hamburger_line_color = jQuery(this).val();
         luxe_update_hamburger_line_color(hamburger_line_color);
     });
     // getting the hamburger bgcolor on change
-    jQuery('#luxe_mobile_menu_slide_background_color').change(function () {
+    jQuery('#colorValue2').change(function () {
         hamburger_bg_color = jQuery(this).val();
         luxe_update_hamburger_bg_color(hamburger_bg_color);
     });

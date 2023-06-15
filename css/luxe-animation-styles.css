@@ -2,6 +2,16 @@
   --transition-dalay:0.5s;
 }
 
+@keyframes textAnimation5 {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(100);
+  }
+}
 @keyframes textAnimation1 {
   0% {
     opacity: 0;
@@ -89,7 +99,21 @@
   flex: none;
   transform: translateX(-100%);
   transition: all 0.4s ease;
-  transition-delay: ;
+}
+.luxe-menu-wrap
+  .luxe-toggler:checked
+  ~ .luxe-mobile-menu
+  .toggler-container-animation-right {
+  transform: translateX(0);
+  transition-duration: var(--luxe-menu-speed);
+}
+.luxe-menu-wrap .luxe-mobile-menu .toggler-container-animation-right {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex: none;
+  transform: translateX(200%);
+  transition: all 0.4s ease;
 }
 .luxe-menu-wrap
   .luxe-toggler:checked
@@ -170,4 +194,8 @@
   + .luxe-hamburger
   .luxe-hamburger-line {
   transform: rotate(225deg);
+}
+ 
+#luxe-menu-primary_navigation.text-animation-fade-up {
+  animation:textAnimation5 1s ease-out;
 }

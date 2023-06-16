@@ -622,7 +622,6 @@ span.luxe-preview-badge {
   justify-content: space-between;
   width: 100%;
   z-index: 99;
-  cursor: nwse-resize;
 }
 .luxe-upgrade-to-pro-container span {
   font-size: 50px;

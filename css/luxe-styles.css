@@ -89,7 +89,7 @@ button.hamburger-icon.hamburger-background-type2 {
 }
 ul#luxe-menu-primary_navigation {
   list-style-type: none;
-  width: 100%;
+  width: 90%;
 }
 ul.luxe-sub-menu {
   list-style-type: none !important;
@@ -103,10 +103,8 @@ ul#luxe-menu-primary_navigation li a {
 
 span.luxe-toggle-sign {
   cursor: pointer;
-  margin-left: 10px;
-  border: 2px solid;
-  padding: 2px;
-  font-weight: bolder;
+filter: invert(100);
+  float: right;
 }
 
 /*Luxe Hamburger icon Position*/
@@ -264,9 +262,11 @@ label.luxe-hamburger-label
   opacity: 0;
   transition: opacity 0.4s ease;
   height: 100vh;
+  width: 100vw;
   display: flex;
   align-items: center;
   width: 100%;
+  justify-content: center;
 }
 
 /* hamburger styles */
@@ -558,5 +558,9 @@ label.luxe-hamburger-label
   width: 50px;
   height: 50px;
   cursor: pointer;
+  z-index: 99;
+}
+.luxe-mobile-container2{
+  position: fixed;
   z-index: 99;
 }

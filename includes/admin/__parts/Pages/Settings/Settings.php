@@ -234,50 +234,50 @@ function luxe_mobile_menu_slide_settings_page_callback()
 
     </script>
     <script>
-        var rectangle = document.getElementById('luxe-hamburger-line-container');
-        var initialWidth, initialHeight;
-        var startX, startY;
-        var isResizing = false;
-        var lineHeightField = document.getElementById('luxe_mobile_menu_slide_hamburger_line_gap');
-        var lineWidthField = document.getElementById('luxe_mobile_menu_slide_hamburger_line_length');
+        // var rectangle = document.getElementById('luxe-hamburger-line-container');
+        // var initialWidth, initialHeight;
+        // var startX, startY;
+        // var isResizing = false;
+        // var lineHeightField = document.getElementById('luxe_mobile_menu_slide_hamburger_line_gap');
+        // var lineWidthField = document.getElementById('luxe_mobile_menu_slide_hamburger_line_length');
 
 
-        // Add event listeners for the mouse events
-        rectangle.addEventListener('mousedown', startResize);
-        window.addEventListener('mousemove', resize);
-        window.addEventListener('mouseup', stopResize);
+        // // Add event listeners for the mouse events
+        // rectangle.addEventListener('mousedown', startResize);
+        // window.addEventListener('mousemove', resize);
+        // window.addEventListener('mouseup', stopResize);
 
-        // Function to start resizing
-        function startResize(event) {
-            event.preventDefault();
-            initialWidth = parseInt(getComputedStyle(rectangle).width);
-            initialHeight = parseInt(getComputedStyle(rectangle).height);
-            startX = event.clientX;
-            startY = event.clientY;
-            isResizing = true;
-        }
+        // // Function to start resizing
+        // function startResize(event) {
+        //     event.preventDefault();
+        //     initialWidth = parseInt(getComputedStyle(rectangle).width);
+        //     initialHeight = parseInt(getComputedStyle(rectangle).height);
+        //     startX = event.clientX;
+        //     startY = event.clientY;
+        //     isResizing = true;
+        // }
 
-        // Function to stop resizing
-        function stopResize(event) {
-            isResizing = false;
-        }
+        // // Function to stop resizing
+        // function stopResize(event) {
+        //     isResizing = false;
+        // }
 
-        // Function to resize the rectangle
-        function resize(event) {
-            if (!isResizing) return;
-            var newWidth = initialWidth + (event.clientX - startX);
-            var newHeight = initialHeight + (event.clientY - startY);
+        // // Function to resize the rectangle
+        // function resize(event) {
+        //     if (!isResizing) return;
+        //     var newWidth = initialWidth + (event.clientX - startX);
+        //     var newHeight = initialHeight + (event.clientY - startY);
 
-            rectangle.style.width = newWidth + '%';
-            rectangle.style.height = newHeight + '%';
-            // convert the tens value into ones value to set the width for the input fields
-            var lineHeightFieldValue = newHeight / 10;
-            var lineWidthFieldValue = newWidth / 10;
-            // set the input field value
-            lineHeightField.value = lineHeightFieldValue;
-            lineWidthField.value = lineWidthFieldValue;
+        //     rectangle.style.width = newWidth + '%';
+        //     rectangle.style.height = newHeight + '%';
+        //     // convert the tens value into ones value to set the width for the input fields
+        //     var lineHeightFieldValue = newHeight / 10;
+        //     var lineWidthFieldValue = newWidth / 10;
+        //     // set the input field value
+        //     lineHeightField.value = lineHeightFieldValue;
+        //     lineWidthField.value = lineWidthFieldValue;
 
-        }
+        // }
 
     </script>
     <?php

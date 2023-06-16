@@ -63,8 +63,7 @@
 .text-animation3 {
   position: relative;
   left: -100%;
-  animation: slideInAnimation 1s ease-in forwards;
-  animation-delay: var(--transition-dalay); /* Add a 1-second delay before the animation starts */
+  animation: slideInAnimation 1s ease-in-out forwards;
 }
 
 /*Toggle container animations*/

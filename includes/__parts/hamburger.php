@@ -12,15 +12,15 @@ $luxe_mobile_menu_slide_hamburger_line_length = get_option('luxe_mobile_menu_sli
         ;
     }
 
-    #luxe-nav-icon1,
-    #luxe-nav-icon2,
-    #luxe-nav-icon3,
+    #luxe-nav-icon1:not(.open),
+    #luxe-nav-icon2:not(.open),
+    #luxe-nav-icon3:not(.open),
     #luxe-nav-icon4:not(.open) {
         height:
-            <?php esc_html_e($luxe_mobile_menu_slide_hamburger_line_gap * 10) ?>%;
+            <?php esc_html_e($luxe_mobile_menu_slide_hamburger_line_gap) ?>%;
 
         width:
-            <?php esc_html_e($luxe_mobile_menu_slide_hamburger_line_length * 10) ?>%;
+            <?php esc_html_e($luxe_mobile_menu_slide_hamburger_line_length) ?>%;
     }
 
     label.luxe-hamburger-label span {

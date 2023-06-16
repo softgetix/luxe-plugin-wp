@@ -12,7 +12,7 @@ function luxe_mobile_menu_slide_container_font_size_field_callback()
     $container_font_size_unit = get_option('luxe_mobile_menu_slide_container_font_size_unit', 'px');
 
     // Generate an input field for the container font size value
-    $html .= '<input placeholder="ex : 15" type="number" name="luxe_mobile_menu_slide_container_font_size" value="' . $container_font_size . '">';
+    $html .= '<input placeholder="ex : 15" type="number" step="0.1" name="luxe_mobile_menu_slide_container_font_size" value="' . $container_font_size . '">';
 
     // Generate a select dropdown for the font size units
     $html .= '<select name="luxe_mobile_menu_slide_container_font_size_unit">';
@@ -45,7 +45,7 @@ function luxe_mobile_menu_slide_container_font_line_height_field_callback()
     $menu_line_height_unit = get_option('luxe_mobile_menu_slide_container_line_height_unit', 'px');
 
     // Display an input field for the menu line height value
-    echo '<input placeholder="ex : 15" type="number" name="luxe_mobile_menu_slide_container_font_line_height" value="' . esc_attr($menu_line_height) . '">';
+    echo '<input placeholder="ex :  15" step="0.1" type="number" name="luxe_mobile_menu_slide_container_font_line_height" value="' . esc_attr($menu_line_height) . '">';
 
     // Generate a select dropdown for the line height units
     $html .= '<select name="luxe_mobile_menu_slide_container_line_height_unit">';

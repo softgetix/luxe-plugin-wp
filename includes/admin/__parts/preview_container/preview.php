@@ -48,14 +48,14 @@
         jQuery('.luxe-preview-hamburger-lines').css('background-color', color);
     }
     function luxe_update_hamburger_line_gap(line_gap) {
-        updated_line_gap = line_gap * 10;
-        updated_line_gap = updated_line_gap + '%';
+        // updated_line_gap = line_gap * 10;
+        updated_line_gap = line_gap + '%';
         jQuery('.luxe-hamburger-line-container').css('height', updated_line_gap)
     }
     function luxe_update_hamburger_line_length(line_length) {
 
-        updated_line_length = line_length * 10;
-        updated_line_length = updated_line_length + '%';
+        // updated_line_length = line_length * 10;
+        updated_line_length = line_length + '%';
         jQuery('.luxe-hamburger-line-container').css('width', updated_line_length)
     }
     function luxe_update_mobile_menu_slide_hamburger_icon_position(position) {

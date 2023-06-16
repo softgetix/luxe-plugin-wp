@@ -18,7 +18,14 @@
         #luxe-menu-primary_navigation li a {
             color:
                 <?php echo esc_attr($container_font_color) ?>
+                
             ;
+            display: inline-block;
+            width: 90%;
+        }
+        #luxe-menu-primary_navigation li:not(.luxe-menu-item-has-children) a{
+            display: inline-block;
+            width: 100%;
         }
 
         #luxe-menu-primary_navigation li ul.luxe-sub-menu li a,

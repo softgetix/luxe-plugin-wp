@@ -22,7 +22,7 @@ class LuxeMobileMenuSlide
 
         // Add mobile menu toggle functionality
         add_action('wp_footer', array($this, 'toggle_menu'));
-        // add_action('wp_head', array($this, 'display_menu'));
+         add_action('wp_head', array($this, 'display_menu'));
 
         // Add shortcode to show mobile menu
         add_shortcode('luxe', array($this, 'luxe_shortcode'));
@@ -120,7 +120,7 @@ class LuxeMobileMenuSlide
                         if ($(this).is(':checked')) {
                             $('body').css('overflow', 'hidden');
 
-                            $('ul#luxe-menu-primary_navigation li').each(function (index) {
+                            $('ul#luxe-menu-primary_navigation li:not(.luxe-menu-item-has-children li)').each(function (index) {
                                 const $li = $(this);
                                 setTimeout(function () {
 

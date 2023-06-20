@@ -3,7 +3,18 @@
   margin: auto;
 }
 
+.Luxe-banner h1 {
+  font-size: 56px;
+  color: white;
+  margin: 0px;
+}
 
+.Luxe-banner p {
+  position: absolute;
+  top: 43%;
+  left: 31%;
+  font-size: 25px;
+}
 
 .align-items-center {
   align-items: center;
@@ -22,7 +33,11 @@
   margin-left: 10px;
   text-decoration: none;
 }
-
+.Luxe-banner {
+  background-color: black;
+  color: white;
+  padding: 20px 10px 50px;
+}
 
 .row {
   display: flex;
@@ -155,28 +170,27 @@ div#luxe_mobile_menu_slide_logo_image_preview {
 .luxe-settings-section-menu h2:first-child {
   border-bottom: 1px solid lightgrey;
   padding-bottom: 10px;
-  color: #111;
+  color: #72aee6;
   margin-top: 0px;
- font-weight:600;
 }
 .luxe-settings-section-menu th,
 .luxe-settings-section-menu td {
-  padding: 10px 0px;
+  padding: 10px 10px;
 }
 .luxe-settings-section-menu select,
 .luxe-settings-section-menu input:not(input[type="color"]) {
-  box-shadow: none;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
   border-radius: 3px;
   width: 100px;
 }
 .pro-badge {
   display: inline-block;
-  background-color: #133DF5;
+  background-color: #0073ae;
   padding: 0px 5px;
   color: white;
   border-radius: 26px;
   margin-left: 10px;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 /* hamburger styles */
@@ -475,16 +489,17 @@ input[type="radio"] {
 .hamburgers_container {
   width: 240px;
   display: flex;
-  gap:20px;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .luxe-hamburger-label.checked {
-  outline: 2px solid #111;
+  outline: 2px solid #0073ae;
   color: white;
 }
 .luxe-background-animation-name {
   text-align: center;
+  font-weight: bold;
   text-align: center;
   width: 100%;
   display: inline-block;
@@ -495,21 +510,19 @@ input[type="radio"] {
 .luxe-background-animation-name-img {
   margin: auto;
   text-align: center;
-	width:30px;
-	height:30px;
 }
 .hamburgers_container.bg-animation {
   text-align: center;
 }
 .background-animation-label {
-  outline: 1px solid #8c8f94;
-  padding: 10px;
+  outline: 2px solid lightgray;
+  padding: 5px;
   height: 75px;
   width: 70px;
   border-radius: 10px;
 }
 .background-animation-label.checked {
-  outline: 2px solid #111;
+  outline: 2px solid #0073ae;
 }
 .hamburgers_container.text-animation {
   display: grid;
@@ -522,15 +535,16 @@ input[type="radio"] {
 .text-animation-label span {
   display: inline-block;
   background-color: white;
-  border: 1px solid #8c8f94;
-  box-shadow: none;
+  border: 1px solid lightgrey;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
   border-radius: 3px;
-  padding: 10px 15px;
+  padding: 5px 10px;
+  color: gray;
   cursor: pointer;
   text-align: center;
 }
 .text-animation-label.checked span {
-  outline: 2px solid #111;
+  outline: 2px solid #0073ae;
   color: black;
 }
 .hamburgers_container.text-animation {
@@ -551,9 +565,14 @@ input[type="radio"] {
   column-gap: 2%;
 }
 .luxe-preview-container {
-  background-color: #DADCDD;
+  background-color: lightgray;
 }
-
+.luxe-upgrade-to-pro-container {
+  background-color: #0073ae;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 .luxe-preview-container {
   padding: 20px;
   position: relative;
@@ -563,12 +582,11 @@ input[type="radio"] {
 }
 .luxe-preview-container img {
   height: 220px;
-  margin-top: 60px;
-	opacity:0.5;
+  margin-top: 130px;
 }
 span.luxe-preview-badge {
   text-align: center;
-  width: 20%;
+  width: 50%;
   position: absolute;
   top: 0;
   left: 50%;
@@ -582,7 +600,7 @@ span.luxe-preview-badge {
   text-align: center;
   font-size: 18px;
   color: #989898;
-  font-weight: 400;
+  font-weight: 700;
 }
 .luxe-preview-hamburger-container {
   display: flex;
@@ -606,14 +624,14 @@ span.luxe-preview-badge {
   z-index: 99;
 }
 
-
 .pickr {
   display: inline-block;
   position: relative;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
 }
 
 .pickr .pcr-button {

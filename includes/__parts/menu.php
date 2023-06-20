@@ -10,12 +10,13 @@ class Luxe_Menu_Walker extends Walker_Nav_Menu {
     // Customize the start of each menu item
     public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
         $indent = ($depth) ? str_repeat("\t", $depth) : '';
-
         // Add custom classes to the menu item
         $classes = empty($item->classes) ? array() : (array) $item->classes;
         if (in_array('menu-item-has-children', $item->classes)) {
             $classes[] = 'luxe-menu-item-has-children';
         }
+        $classes[] = get_option("luxe_mobile_menu_slide_container_font_animation"); 
+
         $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args, $depth));
 
         // Build the menu item HTML markup

@@ -1,97 +1,69 @@
-:root {
-  --transition-delay: 0.5s;
+:root{
+  --transition-dalay:0.5s;
 }
 
-/* @keyframes textAnimation5 {
+@keyframes textAnimation5 {
   0% {
     opacity: 0;
-    transform: translateY(30%);
+    transform: translateY(100%);
   }
   100% {
     opacity: 1;
-    transform: translateY(0%);
+    transform: translateY(100);
   }
 }
-
 @keyframes textAnimation1 {
   0% {
     opacity: 0;
-    transform: translateY(-50%);
+    transform: translateY(-100%);
   }
   100% {
     opacity: 1;
-    transform: translateY(0%);
+    transform: translateY(100);
   }
-} */
-
-#luxe-menu-primary_navigation li.text_animation_fade_down.luxe-text-checked {
-  opacity: 1;
-  transform: translateY(0%);
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-#luxe-menu-primary_navigation li.text_animation_fade_down {
-  opacity: 0;
-  transform: translateY(-30%);
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+#luxe-menu-primary_navigation.text_animation_fade_down {
+  animation:textAnimation1 1s ease-out;
 }
 
-/* @keyframes textAnimation2 {
+@keyframes textAnimation2 {
   0% {
     opacity: 0;
-    transform: translateX(30%);
+    transform: translateX(150%);
   }
-
+  
+  50% {
+    opacity: 0;
+    transform: translateX(150%);
+  }
+  
   100% {
     opacity: 1;
     transform: translateX(0);
   }
-} */
-
-#luxe-menu-primary_navigation li.text_animation_fade_left.luxe-text-checked {
-  opacity: 1;
-  transform: translateX(0);
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-}
-#luxe-menu-primary_navigation li.text_animation_fade_left {
-  /* animation: textAnimation2 1s ease-in-out; */
-  opacity: 0;
-  transform: translateX(50%);
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
-/* @keyframes slideInAnimation {
+.text-animation2 {
+
+  animation: textAnimation2 1s ease-in;
+  animation-delay: var(--transition-delay);
+}
+
+@keyframes slideInAnimation {
   0% {
-    left: -30%;
+    left: -100%;
   }
   100% {
     left: 0;
   }
-} */
-#luxe-menu-primary_navigation li.text_animation_fade_right.luxe-text-checked {
-  transform: translateX(0%);
-  /* animation: slideInAnimation 1s ease-in-out forwards; */
-  opacity: 1;
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
 /* Apply animation to the menu items */
-#luxe-menu-primary_navigation li.text_animation_fade_right {
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-}
-#luxe-menu-primary_navigation li.text_animation_fade_up.luxe-text-checked {
-  /* animation: textAnimation5 1s ease-in-out; */
-  transform: translateY(0%);
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-}
-#luxe-menu-primary_navigation li.text_animation_fade_up {
-  /* animation: textAnimation5 1s ease-in-out; */
-  transform: translateY(100%);
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+.text_animation_fade_right {
+  position: relative;
+  left: -100%;
+  animation: slideInAnimation 1s ease-in-out forwards;
 }
 
 /*Toggle container animations*/
@@ -99,17 +71,17 @@
 /*Animation 1*/
 
 /* .luxe-menu-wrap .luxe-toggler:checked ~ .luxe-mobile-menu .toggler-container-animation-one {
-    transform: scaleX(1);
-    transition-duration: var(--luxe-menu-speed);
-  }
-  .luxe-menu-wrap .luxe-mobile-menu .toggler-container-animation-one{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex: none;
-    transform: scaleX(0);
-    transition: all 0.4s ease;
-  } */
+  transform: scaleX(1);
+  transition-duration: var(--luxe-menu-speed);
+}
+.luxe-menu-wrap .luxe-mobile-menu .toggler-container-animation-one{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex: none;
+  transform: scaleX(0);
+  transition: all 0.4s ease;
+} */
 
 /*Animation 2*/
 .luxe-menu-wrap
@@ -119,7 +91,6 @@
   transform: translateX(0);
   transition-duration: var(--luxe-menu-speed);
 }
-
 .luxe-menu-wrap .luxe-mobile-menu .toggler-container-animation-two {
   width: 100%;
   height: 100%;
@@ -128,7 +99,6 @@
   transform: translateX(-100%);
   transition: all 0.4s ease;
 }
-
 .luxe-menu-wrap
   .luxe-toggler:checked
   ~ .luxe-mobile-menu
@@ -136,7 +106,6 @@
   transform: translateX(0);
   transition-duration: var(--luxe-menu-speed);
 }
-
 .luxe-menu-wrap .luxe-mobile-menu .toggler-container-animation-right {
   width: 100%;
   height: 100%;
@@ -224,4 +193,8 @@
   + .luxe-hamburger
   .luxe-hamburger-line {
   transform: rotate(225deg);
+}
+ 
+#luxe-menu-primary_navigation.text_animation_fade_up {
+  animation:textAnimation5 1s ease-out;
 }

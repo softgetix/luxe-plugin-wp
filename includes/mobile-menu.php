@@ -26,7 +26,8 @@ function luxe_mobile_menu_slide_mobile_menu()
                     require(plugin_dir_path(__FILE__) . '__parts/menu.php');
                     ?>
                 </div>
-                <div class="luxe-mobile-container1 <?php esc_html_e($container_animation_class) ?>"
+                <?php $text_animation_class = get_option("luxe_mobile_menu_slide_container_font_animation") ?>
+                <div class="luxe-mobile-container1 <?php esc_html_e($container_animation_class) ?> <?php esc_html_e($text_animation_class) ?>"
                     style="background-color: <?php echo esc_attr($container_background_color) ?>; color: <?php echo esc_attr($container_font_color); ?>">
 
                     <!-- <div class="luxe-mobile-container2"> -->

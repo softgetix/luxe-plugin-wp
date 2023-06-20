@@ -53,7 +53,6 @@ register_setting('luxe_mobile_menu_slide_settings_settingPage', 'luxe_mobile_men
 register_setting('luxe_mobile_menu_slide_settings_settingPage', 'luxe_mobile_menu_slide_replace_luxe_header_desktop');
 
 
-// regitster setting for licence
 
 
-register_setting('luxe_mobile_menu_slide_licence_key', 'luxe_mobile_menu_slide_licence_field');
+

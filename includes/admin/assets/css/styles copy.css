@@ -553,12 +553,12 @@ input[type="radio"] {
 .luxe-shortcode-bar {
   display: flex;
 }
-.luxe-settings-section input[type="submit"],
+/* .luxe-settings-section input[type="submit"],
 #licence_form input[type="submit"] {
   font-size: 20px;
   padding: 3px 20px;
   width: auto !important;
-}
+} */
 .luxe-hamburger-styles-container {
   display: grid;
   grid-template-columns: 64% 34%;

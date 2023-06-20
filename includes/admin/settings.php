@@ -19,14 +19,7 @@ function luxe_mobile_menu_slide_settings_page()
         'luxe-mobile-menu-slide-settings',
         'luxe_mobile_menu_slide_settings_page_callback',
     );
-    add_submenu_page(
-        'luxe-mobile-menu-slide-settings',
-        'Luxe Plugin Licence',
-        'Licence',
-        'manage_options',
-        'luxe-mobile-menu-slide-licence',
-        'luxe_mobile_menu_slide_settings_page_licence_callback'
-    );
+  
     add_submenu_page(
         'luxe-mobile-menu-slide-settings',
         'Submenu Page Title',
@@ -43,5 +36,5 @@ add_action('admin_menu', 'luxe_mobile_menu_slide_settings_page');
 
 require plugin_dir_path( __FILE__).'__parts/Pages/Settings/Settings.php';
 
-// callback function for licence page
-require plugin_dir_path( __FILE__).'__parts/Pages/Licence/Licence.php';
+
+

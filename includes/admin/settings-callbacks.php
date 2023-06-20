@@ -295,15 +295,6 @@ function luxe_mobile_menu_slide_hamburger_section_callback($section)
     // echo '<h2 class="custom-section-heading">' . esc_html($section_title) . '</h2>';
 }
 
-function luxe_mobile_menu_slide_licence_key_callback()
-{
-    $licence_key = get_option('luxe_mobile_menu_slide_licence_field', '');
 
-
-    echo '<input type="text" name="luxe_mobile_menu_slide_licence_field" style="width:200px" value="' . $licence_key . '"/>';
-
-
-    echo '<label class="luxe-dashboard-label"> or </label> <a href="' . admin_url('nav-menus.php?action=edit&menu=0') . '">Buy a licence</a>';
-}
 
 ?>

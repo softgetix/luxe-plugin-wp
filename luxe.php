@@ -22,7 +22,7 @@ class LuxeMobileMenuSlide
 
         // Add mobile menu toggle functionality
         add_action('wp_footer', array($this, 'toggle_menu'));
-         add_action('wp_head', array($this, 'display_menu'));
+        //  add_action('wp_head', array($this, 'display_menu'));
 
         // Add shortcode to show mobile menu
         add_shortcode('luxe', array($this, 'luxe_shortcode'));

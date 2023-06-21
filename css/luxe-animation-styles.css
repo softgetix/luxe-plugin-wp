@@ -1,3 +1,4 @@
+
 :root {
   --transition-delay: 0.5s;
 }
@@ -35,6 +36,7 @@
   transform: translateY(-30%);
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
+
 
 /* @keyframes textAnimation2 {
   0% {
@@ -225,3 +227,4 @@
   .luxe-hamburger-line {
   transform: rotate(225deg);
 }
+

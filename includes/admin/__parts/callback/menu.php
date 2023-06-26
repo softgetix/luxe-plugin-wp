@@ -79,10 +79,10 @@ function luxe_mobile_menu_slide_container_font_animation_field_callback()
 
     $types = array(
         'text_animation_fade_in' => 'Fade In',
-        'text_animation_fade_down' => 'Fade Down',
-        'text_animation_fade_left' => 'Fade Left',
-        'text_animation_fade_right' => 'Fade Right',
-        'text_animation_fade_up' => 'Fade Up'
+        'luxe_text_animation_fade_down' => 'Fade Down',
+        'luxe_text_animation_fade_left' => 'Fade Left',
+        'luxe_text_animation_fade_right' => 'Fade Right',
+        'luxe_text_animation_fade_up' => 'Fade Up'
     );
     $html = '<div class="hamburgers_container text-animation">';
 

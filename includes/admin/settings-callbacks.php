@@ -189,17 +189,18 @@ function luxe_mobile_menu_slide_select_menu_field_callback()
 
 function luxe_mobile_menu_slide_toggle_animation_field_callback()
 {
-    $toggle_animation = get_option('luxe_mobile_menu_slide_toggle_animation', 'toggle_container_animation4');
+    $toggle_animation = get_option('luxe_mobile_menu_slide_toggle_animation', 'luxe-background-animation-fade');
 
     // Define the available toggle animations for the dropdown
     $bganimations = array(
-        'toggle_container_animation4' => 'Fade',
+        'luxe-background-animation-fade' => 'Fade',
+        'luxe-background-animation-fade-left' => 'Slide Left',
         // 'toggle_container_animation1' => 'curtain Open Effect',
-        'toggle_container_animation2' => 'Slide Right',
-        'toggle_container_animation3' => 'Slide Down',
+        'luxe-background-animation-fade-right' => 'Slide Right',
+        'luxe-background-animation-fade-down' => 'Slide Down',
 
-        'toggle_container_animation-down' => 'Slide Up',
-        'toggle_container_animation-left' => 'Slide Left',
+        'luxe-background-animation-fade-up' => 'Slide Up',
+       
 
 
         // Add more animation options as needed
@@ -256,7 +257,7 @@ function luxe_mobile_menu_slide_hamburger_icon_styles_field_callback()
             $checked_class = 'checked';
         }
         $string = '<label for="' . $animation_key . '" class="luxe-hamburger-label ' . $checked_class . '">
-  <div id="luxe-nav-icon' . $no . '" class="">
+  <div id="luxe-hamburger-animation' . $no . '" class="">
             <span></span>
             <span></span>
             <span></span>

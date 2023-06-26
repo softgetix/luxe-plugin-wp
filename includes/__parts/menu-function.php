@@ -33,20 +33,5 @@ $luxe_mobile_menu_slide_container_sub_line_height_unit = get_option('luxe_mobile
 // Add a CSS class based on the selected type (passing register setting function name here from setting.php in get_option)
 $hamburger_class = ($hamburger_type !== 'normal') ? 'hamburger-' . $hamburger_type : '';
 $selected_menu_id = get_option('luxe_mobile_menu_slide_select_menu');
-if ($container_animation === 'toggleNone') {
-    $container_animation_class = 'toggler-container-animation-none';
-} else if ($container_animation === 'toggle_container_animation1') {
-    $container_animation_class = 'toggler-container-animation-one';
-} else if ($container_animation === 'toggle_container_animation2') {
-    $container_animation_class = 'toggler-container-animation-two';
-} else if ($container_animation === 'toggle_container_animation3') {
-    $container_animation_class = 'toggler-container-animation-three';
-} else if ($container_animation === 'toggle_container_animation4') {
-    $container_animation_class = 'toggler-container-animation-four';
-} else if ($container_animation === 'toggle_container_animation-down') {
-    $container_animation_class = 'toggler-container-animation-down';
-} else if ($container_animation === 'toggle_container_animation-left') {
-    $container_animation_class = 'toggler-container-animation-right';
-} else {
-    $container_animation_class = 'toggler-container-animation-four';
-}
+
+$container_animation_class = $container_animation;

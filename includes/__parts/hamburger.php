@@ -12,10 +12,10 @@ $luxe_mobile_menu_slide_hamburger_line_length = get_option('luxe_mobile_menu_sli
         ;
     }
 
-    #luxe-nav-icon1,
-    #luxe-nav-icon2,
-    #luxe-nav-icon3,
-    #luxe-nav-icon4 {
+    #luxe-hamburger-animation1,
+    #luxe-hamburger-animation2,
+    #luxe-hamburger-animation3,
+    #luxe-hamburger-animation4 {
         height:
             <?php esc_html_e($luxe_mobile_menu_slide_hamburger_line_gap) ?>%;
 
@@ -28,7 +28,8 @@ $luxe_mobile_menu_slide_hamburger_line_length = get_option('luxe_mobile_menu_sli
             <?php echo esc_attr($hamburger_color) ?>
         ;
         height:
-            <?php echo esc_attr($luxe_hamburger_line_thickness.'px'); ?>
+            <?php echo esc_attr($luxe_hamburger_line_thickness.'px'); ?>;
+     
     }
 </style>
 <div class="luxe-hamburger-container" style="justify-content: <?php echo $luxe_container_position; ?>;">
@@ -39,14 +40,14 @@ $luxe_mobile_menu_slide_hamburger_line_length = get_option('luxe_mobile_menu_sli
         <?php if ($hamburger_styles == 'style_1') {
 
             ?>
-            <div id="luxe-nav-icon1">
+            <div id="luxe-hamburger-animation1">
                 <span></span>
                 <span></span>
                 <span></span>
 
             </div>
         <?php } elseif ($hamburger_styles == 'style_2') { ?>
-            <div id="luxe-nav-icon2">
+            <div id="luxe-hamburger-animation2">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -54,7 +55,7 @@ $luxe_mobile_menu_slide_hamburger_line_length = get_option('luxe_mobile_menu_sli
             </div>
 
         <?php } elseif ($hamburger_styles == 'style_3') { ?>
-            <div id="luxe-nav-icon3">
+            <div id="luxe-hamburger-animation3">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -62,7 +63,7 @@ $luxe_mobile_menu_slide_hamburger_line_length = get_option('luxe_mobile_menu_sli
             </div>
         <?php } else { ?>
 
-            <div id="luxe-nav-icon4">
+            <div id="luxe-hamburger-animation4">
                 <span></span>
                 <span></span>
                 <span></span>

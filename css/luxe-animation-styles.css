@@ -25,13 +25,13 @@
   }
 } */
 
-#luxe-menu-primary_navigation li.text_animation_fade_down.luxe-text-checked {
+#luxe-menu-primary_navigation li.luxe_text_animation_fade_down.luxe-text-checked {
   opacity: 1;
   transform: translateY(0%);
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-#luxe-menu-primary_navigation li.text_animation_fade_down {
+#luxe-menu-primary_navigation li.luxe_text_animation_fade_down {
   opacity: 0;
   transform: translateY(-30%);
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
@@ -50,12 +50,12 @@
   }
 } */
 
-#luxe-menu-primary_navigation li.text_animation_fade_left.luxe-text-checked {
+#luxe-menu-primary_navigation li.luxe_text_animation_fade_left.luxe-text-checked {
   opacity: 1;
   transform: translateX(0);
   transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
-#luxe-menu-primary_navigation li.text_animation_fade_left {
+#luxe-menu-primary_navigation li.luxe_text_animation_fade_left {
   /* animation: textAnimation2 1s ease-in-out; */
   opacity: 0;
   transform: translateX(50%);
@@ -70,7 +70,7 @@
     left: 0;
   }
 } */
-#luxe-menu-primary_navigation li.text_animation_fade_right.luxe-text-checked {
+#luxe-menu-primary_navigation li.luxe_text_animation_fade_right.luxe-text-checked {
   transform: translateX(0%);
   /* animation: slideInAnimation 1s ease-in-out forwards; */
   opacity: 1;
@@ -78,18 +78,18 @@
 }
 
 /* Apply animation to the menu items */
-#luxe-menu-primary_navigation li.text_animation_fade_right {
+#luxe-menu-primary_navigation li.luxe_text_animation_fade_right {
   transform: translateX(-50%);
   opacity: 0;
   transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
-#luxe-menu-primary_navigation li.text_animation_fade_up.luxe-text-checked {
+#luxe-menu-primary_navigation li.luxe_text_animation_fade_up.luxe-text-checked {
   /* animation: textAnimation5 1s ease-in-out; */
   transform: translateY(0%);
   opacity: 1;
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
-#luxe-menu-primary_navigation li.text_animation_fade_up {
+#luxe-menu-primary_navigation li.luxe_text_animation_fade_up {
   /* animation: textAnimation5 1s ease-in-out; */
   transform: translateY(100%);
   opacity: 0;
@@ -117,12 +117,12 @@
 .luxe-menu-wrap
   .luxe-toggler:checked
   ~ .luxe-mobile-menu
-  .toggler-container-animation-two {
+  .luxe-background-animation-fade-right {
   transform: translateX(0);
   transition-duration: var(--luxe-menu-speed);
 }
 
-.luxe-menu-wrap .luxe-mobile-menu .toggler-container-animation-two {
+.luxe-menu-wrap .luxe-mobile-menu .luxe-background-animation-fade-right {
   width: 100%;
   height: 100%;
   display: flex;
@@ -134,12 +134,12 @@
 .luxe-menu-wrap
   .luxe-toggler:checked
   ~ .luxe-mobile-menu
-  .toggler-container-animation-right {
+  .luxe-background-animation-fade-left {
   transform: translateX(0);
   transition-duration: var(--luxe-menu-speed);
 }
 
-.luxe-menu-wrap .luxe-mobile-menu .toggler-container-animation-right {
+.luxe-menu-wrap .luxe-mobile-menu .luxe-background-animation-fade-left {
   width: 100%;
   height: 100%;
   display: flex;
@@ -150,12 +150,12 @@
 .luxe-menu-wrap
   .luxe-toggler:checked
   ~ .luxe-mobile-menu
-  .toggler-container-animation-down {
+  .luxe-background-animation-fade-up {
   transform: translateY(0);
   transition-duration: var(--luxe-menu-speed);
 }
 
-.luxe-menu-wrap .luxe-mobile-menu .toggler-container-animation-down {
+.luxe-menu-wrap .luxe-mobile-menu .luxe-background-animation-fade-up {
   width: 100%;
   height: 100%;
   display: flex;
@@ -168,11 +168,11 @@
 .luxe-menu-wrap
   .luxe-toggler:checked
   ~ .luxe-mobile-menu
-  .toggler-container-animation-three {
+  .luxe-background-animation-fade-down {
   transform: translateY(0);
   transition-duration: var(--luxe-menu-speed);
 }
-.luxe-menu-wrap .luxe-mobile-menu .toggler-container-animation-three {
+.luxe-menu-wrap .luxe-mobile-menu .luxe-background-animation-fade-down {
   width: 100%;
   height: 100%;
   display: flex;
@@ -185,12 +185,12 @@
 .luxe-menu-wrap
   .luxe-toggler:checked
   ~ .luxe-mobile-menu
-  .toggler-container-animation-four {
+  .luxe-background-animation-fade {
   opacity: 1;
   transition-duration: var(--luxe-menu-speed);
 }
 
-.luxe-menu-wrap .luxe-mobile-menu .toggler-container-animation-four {
+.luxe-menu-wrap .luxe-mobile-menu .luxe-background-animation-fade {
   background: black;
   width: 100%;
   height: 100%;

@@ -22,7 +22,7 @@ class LuxeMobileMenuSlide
 
         // Add mobile menu toggle functionality
         add_action('wp_footer', array($this, 'toggle_menu'));
-        //  add_action('wp_head', array($this, 'display_menu'));
+        // add_action('wp_head', array($this, 'display_menu'));
 
         // Add shortcode to show mobile menu
         add_shortcode('luxe', array($this, 'luxe_shortcode'));
@@ -106,9 +106,9 @@ class LuxeMobileMenuSlide
                 jQuery('.luxe-toggler').on('change', function () {
 
                     if (jQuery(this).is(':checked')) {
-                        $('#luxe-nav-icon1, #luxe-nav-icon2, #luxe-nav-icon3, #luxe-nav-icon4').addClass('open');
+                        $('#luxe-hamburger-animation1, #luxe-hamburger-animation2, #luxe-hamburger-animation3, #luxe-hamburger-animation4').addClass('open');
                     } else {
-                        $('#luxe-nav-icon1, #luxe-nav-icon2, #luxe-nav-icon3, #luxe-nav-icon4').removeClass('open');
+                        $('#luxe-hamburger-animation1, #luxe-hamburger-animation2, #luxe-hamburger-animation3, #luxe-hamburger-animation4').removeClass('open');
                     }
                     var textAnimation = '<?php echo esc_js(get_option("luxe_mobile_menu_slide_container_font_animation")); ?>';
                     var selectedAnimation = '<?php echo esc_js(get_option("luxe_mobile_menu_slide_toggle_animation")); ?>';

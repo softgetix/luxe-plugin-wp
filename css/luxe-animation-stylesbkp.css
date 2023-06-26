@@ -23,7 +23,7 @@
   }
 }
 
-#luxe-menu-primary_navigation.text_animation_fade_down {
+#luxe-menu-primary_navigation.luxe_text_animation_fade_down {
   animation:textAnimation1 1s ease-out;
 }
 
@@ -60,7 +60,7 @@
 }
 
 /* Apply animation to the menu items */
-.text_animation_fade_right {
+.luxe_text_animation_fade_right {
   position: relative;
   left: -100%;
   animation: slideInAnimation 1s ease-in-out forwards;
@@ -87,11 +87,11 @@
 .luxe-menu-wrap
   .luxe-toggler:checked
   ~ .luxe-mobile-menu
-  .toggler-container-animation-two {
+  .luxe-background-animation-fade-right {
   transform: translateX(0);
   transition-duration: var(--luxe-menu-speed);
 }
-.luxe-menu-wrap .luxe-mobile-menu .toggler-container-animation-two {
+.luxe-menu-wrap .luxe-mobile-menu .luxe-background-animation-fade-right {
   width: 100%;
   height: 100%;
   display: flex;
@@ -102,11 +102,11 @@
 .luxe-menu-wrap
   .luxe-toggler:checked
   ~ .luxe-mobile-menu
-  .toggler-container-animation-right {
+  .luxe-background-animation-fade-left {
   transform: translateX(0);
   transition-duration: var(--luxe-menu-speed);
 }
-.luxe-menu-wrap .luxe-mobile-menu .toggler-container-animation-right {
+.luxe-menu-wrap .luxe-mobile-menu .luxe-background-animation-fade-left {
   width: 100%;
   height: 100%;
   display: flex;
@@ -117,12 +117,12 @@
 .luxe-menu-wrap
   .luxe-toggler:checked
   ~ .luxe-mobile-menu
-  .toggler-container-animation-down {
+  .luxe-background-animation-fade-up {
   transform: translateY(0);
   transition-duration: var(--luxe-menu-speed);
 }
 
-.luxe-menu-wrap .luxe-mobile-menu .toggler-container-animation-down {
+.luxe-menu-wrap .luxe-mobile-menu .luxe-background-animation-fade-up {
   width: 100%;
   height: 100%;
   display: flex;
@@ -135,11 +135,11 @@
 .luxe-menu-wrap
   .luxe-toggler:checked
   ~ .luxe-mobile-menu
-  .toggler-container-animation-three {
+  .luxe-background-animation-fade-down {
   transform: translateY(0);
   transition-duration: var(--luxe-menu-speed);
 }
-.luxe-menu-wrap .luxe-mobile-menu .toggler-container-animation-three {
+.luxe-menu-wrap .luxe-mobile-menu .luxe-background-animation-fade-down {
   width: 100%;
   height: 100%;
   display: flex;
@@ -152,12 +152,12 @@
 .luxe-menu-wrap
   .luxe-toggler:checked
   ~ .luxe-mobile-menu
-  .toggler-container-animation-four {
+  .luxe-background-animation-fade {
   opacity: 1;
   transition-duration: var(--luxe-menu-speed);
 }
 
-.luxe-menu-wrap .luxe-mobile-menu .toggler-container-animation-four {
+.luxe-menu-wrap .luxe-mobile-menu .luxe-background-animation-fade {
   background: black;
   width: 100%;
   height: 100%;
@@ -195,6 +195,6 @@
   transform: rotate(225deg);
 }
  
-#luxe-menu-primary_navigation.text_animation_fade_up {
+#luxe-menu-primary_navigation.luxe_text_animation_fade_up {
   animation:textAnimation5 1s ease-out;
 }

@@ -35,8 +35,6 @@ class LuxeMobileMenuSlide
         require_once plugin_dir_path(__FILE__) . 'includes/mobile-menu.php';
         require_once plugin_dir_path(__FILE__) . 'includes/sub-menu.php';
     }
-
-
     public function luxe_mobile_menu_slide_enqueue_scripts()
     {
         // wp_enqueue_media();
@@ -49,7 +47,6 @@ class LuxeMobileMenuSlide
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \LuxeMobileMenuSlide_Elementor_Widget());
         }
     }
-
     // Toggle menu functionality
     public function toggle_menu()
     {
@@ -161,7 +158,4 @@ class LuxeMobileMenuSlide
 
 }
 
- new LuxeMobileMenuSlide();
-
-
-?>
+new LuxeMobileMenuSlide();

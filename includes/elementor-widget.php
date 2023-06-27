@@ -136,11 +136,11 @@ class LuxeMobileMenuSlide_Elementor_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'luxe_mobile_menu_slide_hamburger_border_radius',
+            'luxe_mobile_menu_slide_hamburger_line_thickness',
             [
                 'label' => 'Line Thickness (px)',
                 'type' => \Elementor\Controls_Manager::NUMBER,
-                'default' => get_option('luxe_mobile_menu_slide_hamburger_border_radius', '3'),
+                'default' => get_option('luxe_mobile_menu_slide_hamburger_line_thickness', '3'),
 
                 'step' => 0.1,
             ]
@@ -236,143 +236,284 @@ class LuxeMobileMenuSlide_Elementor_Widget extends Widget_Base
                 'default' => get_option('luxe_mobile_menu_slide_container_font_color', '#fff'),
             ]
         );
+        // $this->add_control(
+        //     'luxe_mobile_menu_slide_container_font_size',
+        //     [
+        //         'label' => 'Font Size',
+        //         'type' => \Elementor\Controls_Manager::SLIDER,
+        //         'size_units' => ['px', 'vw', 'em', 'rem'],
+        //         'default' => [
+        //             'unit' => get_option('luxe_mobile_menu_slide_container_font_size_unit', 'px'),
+        //             'size' => get_option('luxe_mobile_menu_slide_container_font_size', 12),
+        //         ],
+        //         'range' => [
+        //             'px' => [
+        //                 'min' => 0,
+        //                 'max' => 100,
+        //             ],
+        //             'vw' => [
+        //                 'min' => 0,
+        //                 'max' => 100,
+        //             ],
+        //             'em' => [
+        //                 'min' => 0,
+        //                 'max' => 10,
+        //                 'step' => 0.1,
+        //             ],
+        //             'rem' => [
+        //                 'min' => 0,
+        //                 'max' => 10,
+        //                 'step' => 0.1,
+        //             ],
+        //         ],
+        //     ]
+        // );
+
+        // $this->add_control(
+        //     'luxe_mobile_menu_slide_container_font_line_height',
+        //     [
+        //         'label' => 'Line Height',
+        //         'type' => \Elementor\Controls_Manager::SLIDER,
+        //         'size_units' => ['px', 'vw', 'em', 'rem'],
+        //         'default' => [
+        //             'size' => get_option('luxe_mobile_menu_slide_container_font_line_height_unit', 'px'),
+        //             'unit' => get_option('luxe_mobile_menu_slide_container_font_line_height', 12),
+        //         ],
+        //         'range' => [
+        //             'px' => [
+        //                 'min' => 0,
+        //                 'max' => 100,
+        //             ],
+        //             'vw' => [
+        //                 'min' => 0,
+        //                 'max' => 100,
+        //             ],
+        //             'em' => [
+        //                 'min' => 0,
+        //                 'max' => 10,
+        //                 'step' => 0.1,
+        //             ],
+        //             'rem' => [
+        //                 'min' => 0,
+        //                 'max' => 10,
+        //                 'step' => 0.1,
+        //             ],
+        //         ],
+        //     ]
+        // );
+
+
         $this->add_control(
             'luxe_mobile_menu_slide_container_font_size',
             [
-                'label' => 'Font Size',
-                'type' => \Elementor\Controls_Manager::SLIDER,
-                'size_units' => ['px', 'vw', 'em', 'rem'],
-                'default' => [
-                    'unit' => 'px',
-                    'size' => 0,
-                ],
-                'range' => [
-                    'px' => [
-                        'min' => 0,
-                        'max' => 100,
-                    ],
-                    'vw' => [
-                        'min' => 0,
-                        'max' => 100,
-                    ],
-                    'em' => [
-                        'min' => 0,
-                        'max' => 10,
-                        'step' => 0.1,
-                    ],
-                    'rem' => [
-                        'min' => 0,
-                        'max' => 10,
-                        'step' => 0.1,
-                    ],
-                ],
+                'label' => 'Line Height',
+                'type' => \Elementor\Controls_Manager::NUMBER,
+                'default' => get_option('luxe_mobile_menu_slide_container_font_size', 12),
+               
+                'step' => 0.1,
+                
             ]
         );
         
         $this->add_control(
-            'luxe_mobile_menu_slide_container_font_line_height',
+            'luxe_mobile_menu_slide_container_font_line_height_unit',
             [
-                'label' => 'Line Height',
-                'type' => \Elementor\Controls_Manager::SLIDER,
-                'size_units' => ['px', 'vw', 'em', 'rem'],
-                'default' => [
-                    'unit' => 'px',
-                    'size' => 0,
+                'label' => 'Line Height Unit',
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'options' => [
+                    'px' => 'px',
+                    'vw' => 'vw',
+                    'em' => 'em',
+                    'rem' => 'rem',
                 ],
-                'range' => [
-                    'px' => [
-                        'min' => 0,
-                        'max' => 100,
-                    ],
-                    'vw' => [
-                        'min' => 0,
-                        'max' => 100,
-                    ],
-                    'em' => [
-                        'min' => 0,
-                        'max' => 10,
-                        'step' => 0.1,
-                    ],
-                    'rem' => [
-                        'min' => 0,
-                        'max' => 10,
-                        'step' => 0.1,
-                    ],
-                ],
+                'default' => get_option('luxe_mobile_menu_slide_container_font_line_height_unit', 'px'),
+                'save_default' => true,
+                'sanitize_callback' => function ($value) {
+                    // Sanitize the value if necessary
+                    return $value;
+                },
+                'update_control' => function ($control, $value) {
+                    // Update the option value when the control value is changed
+                    update_option('luxe_mobile_menu_slide_container_font_line_height_unit', $value);
+                },
             ]
         );
+        
 
         $this->add_control(
             'luxe_mobile_menu_slide_container_submenu_font_color',
             [
                 'label' => 'Sub Menu Font Colour',
                 'type' => \Elementor\Controls_Manager::COLOR,
-                'default' => get_option( 'luxe_mobile_menu_slide_container_submenu_font_color', '#fff' )
+                'default' => get_option('luxe_mobile_menu_slide_container_submenu_font_color', '#fff')
             ]
         );
+        // $this->add_control(
+        //     'luxe_mobile_menu_slide_container_sub_font_size',
+        //     [
+        //         'label' => 'Sub Menu Font Size',
+        //         'type' => \Elementor\Controls_Manager::SLIDER,
+        //         'size_units' => ['px', 'vw', 'em', 'rem'],
+        //         'default' => [
+        //             'unit' => get_option('luxe_mobile_menu_slide_container_sub_font_size_unit', 'px'),
+        //             'size' => get_option('luxe_mobile_menu_slide_container_sub_font_size', 12),
+        //         ],
+        //         'range' => [
+        //             'px' => [
+        //                 'min' => 0,
+        //                 'max' => 100,
+        //             ],
+        //             'vw' => [
+        //                 'min' => 0,
+        //                 'max' => 100,
+        //             ],
+        //             'em' => [
+        //                 'min' => 0,
+        //                 'max' => 10,
+        //                 'step' => 0.1,
+        //             ],
+        //             'rem' => [
+        //                 'min' => 0,
+        //                 'max' => 10,
+        //                 'step' => 0.1,
+        //             ],
+        //         ],
+        //     ]
+        // );
         $this->add_control(
             'luxe_mobile_menu_slide_container_sub_font_size',
             [
                 'label' => 'Sub Menu Font Size',
-                'type' => \Elementor\Controls_Manager::SLIDER,
-                'size_units' => ['px', 'vw', 'em', 'rem'],
-                'default' => [
-                    'unit' => 'px',
-                    'size' => 0,
-                ],
-                'range' => [
-                    'px' => [
-                        'min' => 0,
-                        'max' => 100,
-                    ],
-                    'vw' => [
-                        'min' => 0,
-                        'max' => 100,
-                    ],
-                    'em' => [
-                        'min' => 0,
-                        'max' => 10,
-                        'step' => 0.1,
-                    ],
-                    'rem' => [
-                        'min' => 0,
-                        'max' => 10,
-                        'step' => 0.1,
-                    ],
-                ],
+                'type' => \Elementor\Controls_Manager::NUMBER,
+                'default' => get_option('luxe_mobile_menu_slide_container_sub_font_size', 12),
+                'min' => 0,
+                'max' => 100,
+                'step' => 1,
+                'save_default' => true,
+                'sanitize_callback' => function ($value) {
+                    // Sanitize the value if necessary
+                    return $value;
+                },
+                'update_control' => function ($control, $value) {
+                    // Update the option value when the control value is changed
+                    update_option('luxe_mobile_menu_slide_container_sub_font_size', $value);
+                },
             ]
         );
+        
+        $this->add_control(
+            'luxe_mobile_menu_slide_container_sub_font_size_unit',
+            [
+                'label' => 'Sub Menu Font Size Unit',
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'options' => [
+                    'px' => 'px',
+                    'vw' => 'vw',
+                    'em' => 'em',
+                    'rem' => 'rem',
+                ],
+                'default' => get_option('luxe_mobile_menu_slide_container_sub_font_size_unit', 'px'),
+                'save_default' => true,
+                'sanitize_callback' => function ($value) {
+                    // Sanitize the value if necessary
+                    return $value;
+                },
+                'update_control' => function ($control, $value) {
+                    // Update the option value when the control value is changed
+                    update_option('luxe_mobile_menu_slide_container_sub_font_size_unit', $value);
+                },
+            ]
+        );
+        
+
+        // $this->add_control(
+        //     'luxe_mobile_menu_slide_container_sub_line_height',
+        //     [
+        //         'label' => 'Sub Menu Line Height',
+        //         'type' => \Elementor\Controls_Manager::SLIDER,
+        //         'size_units' => ['px', 'vw', 'em', 'rem'],
+        //         'default' => [
+        //             'unit' => get_option('luxe_mobile_menu_slide_container_sub_line_height_unit', 'px'),
+        //             'size' => get_option('luxe_mobile_menu_slide_container_sub_line_height', 12),
+        //         ],
+        //         'range' => [
+        //             'px' => [
+        //                 'min' => 0,
+        //                 'max' => 100,
+        //             ],
+        //             'vw' => [
+        //                 'min' => 0,
+        //                 'max' => 100,
+        //             ],
+        //             'em' => [
+        //                 'min' => 0,
+        //                 'max' => 10,
+        //                 'step' => 0.1,
+        //             ],
+        //             'rem' => [
+        //                 'min' => 0,
+        //                 'max' => 10,
+        //                 'step' => 0.1,
+        //             ],
+        //         ],
+        //         'save_default' => true, // Add this line to enable saving the value in the option table
+        //         'sanitize_callback' => function ($value) {
+        //             // Sanitize the value if necessary
+        //             return $value;
+        //         },
+        //         'update_control' => function ($control, $value) {
+        //             // Update the option values when the control value is changed
+        //             update_option('luxe_mobile_menu_slide_container_sub_line_height', $value['size']);
+        //             update_option('luxe_mobile_menu_slide_container_sub_line_height_unit', $value['unit']);
+        //             $control->refresh();
+        //         },
+        //     ]
+        // );
 
         $this->add_control(
-            'luxe_mobile_menu_slide_container_sub_line_height',
+            'luxe_mobile_menu_slide_container_sub_line_height_size',
             [
                 'label' => 'Sub Menu Line Height',
-                'type' => \Elementor\Controls_Manager::SLIDER,
-                'size_units' => ['px', 'vw', 'em', 'rem'],
-                'default' => [
-                    'unit' => 'px',
-                    'size' => 0,
+                'type' => \Elementor\Controls_Manager::NUMBER,
+                'default' => get_option('luxe_mobile_menu_slide_container_sub_line_height_size', 12),
+                'min' => 0,
+                'max' => 100,
+                'step' => 1,
+                'save_default' => true,
+                'sanitize_callback' => function ($value) {
+                    // Sanitize the value if necessary
+                    return $value;
+                },
+                'update_control' => function ($control, $value) {
+                    // Update the option value when the control value is changed
+                    update_option('luxe_mobile_menu_slide_container_sub_line_height', $value);
+                    $control->refresh();
+                },
+            ]
+        );
+        
+        $this->add_control(
+            'luxe_mobile_menu_slide_container_sub_line_height_unit',
+            [
+                'label' => 'Sub Menu Line Height Unit',
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'options' => [
+                    'px' => 'px',
+                    'vw' => 'vw',
+                    'em' => 'em',
+                    'rem' => 'rem',
                 ],
-                'range' => [
-                    'px' => [
-                        'min' => 0,
-                        'max' => 100,
-                    ],
-                    'vw' => [
-                        'min' => 0,
-                        'max' => 100,
-                    ],
-                    'em' => [
-                        'min' => 0,
-                        'max' => 10,
-                        'step' => 0.1,
-                    ],
-                    'rem' => [
-                        'min' => 0,
-                        'max' => 10,
-                        'step' => 0.1,
-                    ],
-                ],
+                'default' => get_option('luxe_mobile_menu_slide_container_sub_line_height_unit', 'px'),
+                'save_default' => true,
+                'sanitize_callback' => function ($value) {
+                    // Sanitize the value if necessary
+                    return $value;
+                },
+                'update_control' => function ($control, $value) {
+                    // Update the option value when the control value is changed
+                    update_option('luxe_mobile_menu_slide_container_sub_line_height_unit', $value);
+                    $control->refresh();
+                },
             ]
         );
 
@@ -432,17 +573,23 @@ class LuxeMobileMenuSlide_Elementor_Widget extends Widget_Base
         update_option('luxe_mobile_menu_slide_hamburger_border_radius', $settings['luxe_mobile_menu_slide_hamburger_border_radius']);
         update_option('luxe_mobile_menu_slide_container_background_color', $settings['luxe_mobile_menu_slide_container_background_color']);
         update_option('luxe_mobile_menu_slide_container_font_color', $settings['luxe_mobile_menu_slide_container_font_color']);
-        update_option('luxe_mobile_menu_slide_container_font_size', $settings['luxe_mobile_menu_slide_container_font_size']);
+        update_option('luxe_mobile_menu_slide_container_font_size', $settings['luxe_mobile_menu_slide_container_font_size']['size']);
         update_option('luxe_mobile_menu_slide_container_font_size_unit', $settings['luxe_mobile_menu_slide_container_font_size']['unit']);
-        update_option('luxe_mobile_menu_slide_container_font_line_height', $settings['luxe_mobile_menu_slide_container_font_line_height']);
-        update_option('luxe_mobile_menu_slide_container_line_height_unit', $settings['luxe_mobile_menu_slide_container_font_line_height']['unit']);
+        // update_option('luxe_mobile_menu_slide_container_font_line_height', $settings['luxe_mobile_menu_slide_container_font_line_height']['size']);
+        // update_option('luxe_mobile_menu_slide_container_line_height_unit', $settings['luxe_mobile_menu_slide_container_font_line_height']['unit']);
+        update_option('luxe_mobile_menu_slide_hamburger_line_thickness', $settings['luxe_mobile_menu_slide_hamburger_line_thickness']);
 
 
         update_option('luxe_mobile_menu_slide_container_submenu_font_color', $settings['luxe_mobile_menu_slide_container_submenu_font_color']);
-        update_option('luxe_mobile_menu_slide_container_sub_font_size', $settings['luxe_mobile_menu_slide_container_sub_font_size']);
-        update_option('luxe_mobile_menu_slide_container_sub_font_size_unit', $settings['luxe_mobile_menu_slide_container_sub_font_size']['unit']);
-        update_option('luxe_mobile_menu_slide_container_sub_line_height', $settings['luxe_mobile_menu_slide_container_sub_line_height']);
-        update_option('luxe_mobile_menu_slide_container_sub_line_height_unit', $settings['luxe_mobile_menu_slide_container_sub_line_height']['unit']);
+
+        // update_option('luxe_mobile_menu_slide_container_sub_font_size_unit', $settings['luxe_mobile_menu_slide_container_sub_font_size']['unit']);
+     
+
+        // update_option('luxe_mobile_menu_slide_container_sub_line_height', $settings['luxe_mobile_menu_slide_container_sub_line_height']['size']);
+        
+        // update_option('luxe_mobile_menu_slide_container_sub_line_height_unit', $settings['luxe_mobile_menu_slide_container_sub_line_height']['unit']);
+
+
 
         // pro
 

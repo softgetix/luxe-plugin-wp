@@ -8,8 +8,10 @@ function luxe_mobile_menu_slide_container_font_size_field_callback()
     global $size_units;
 
     // Retrieve the saved container font size options
-    $container_font_size = get_option('luxe_mobile_menu_slide_container_font_size', 25);
+    $container_font_size = get_option('luxe_mobile_menu_slide_container_font_size', '25');
     $container_font_size_unit = get_option('luxe_mobile_menu_slide_container_font_size_unit', 'px');
+
+
 
     // Generate an input field for the container font size value
     $html .= '<input placeholder="ex : 15" type="number" step="0.1" name="luxe_mobile_menu_slide_container_font_size" value="' . $container_font_size . '">';
@@ -66,7 +68,7 @@ function luxe_mobile_menu_slide_container_font_line_height_field_callback()
 
 function luxe_mobile_menu_slide_container_font_animation_field_callback()
 {
-    $text_animation = get_option('luxe_mobile_menu_slide_container_font_animation', 'animation_none');
+    $text_animation = get_option('luxe_mobile_menu_slide_container_font_animation', 'text_animation_fade_in');
 
     // Define the available types for the dropdown
     // $types = array(
@@ -109,15 +111,15 @@ function luxe_mobile_menu_slide_container_stagger_animation_field_callback()
 
     $html = '';
     $stagger_animation = get_option('luxe_mobile_menu_slide_container_stagger_animation', 1);
-    
+
     $html .= '<select name="luxe_mobile_menu_slide_container_stagger_animation">';
     $html .= '<option' . ($stagger_animation ? '' : ' selected') . ' value="0">No</option>';
     $html .= '<option' . ($stagger_animation ? ' selected' : '') . ' value="1">Yes</option>';
     $html .= '</select>';
-    $html .= '<label class="luxe-dashboard-label"> </label>' ;
-    
+    $html .= '<label class="luxe-dashboard-label"> </label>';
+
     echo $html;
-    
+
 
 
 

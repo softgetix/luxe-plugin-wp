@@ -43,7 +43,7 @@ class LuxeMobileMenuSlide
     public function register_elementor_widget()
     {
         if (class_exists('Elementor\\Widget_Base')) {
-            require_once plugin_dir_path(__FILE__) . 'includes/elementor-widget.php';
+            require_once plugin_dir_path(__FILE__) . 'includes/extra/elementor-widget.php';
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \LuxeMobileMenuSlide_Elementor_Widget());
         }
     }

@@ -42,7 +42,7 @@ function luxe_mobile_menu_slide_hamburger_icon_position_field_callback()
     // Define the available types for the dropdown
     $types = array(
         'normal' => 'Inline',
-        'Left' => 'Position Left',
+        'left' => 'Position Left',
         'right' => 'Position right',
         'center' => 'Position middle',
     );

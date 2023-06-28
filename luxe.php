@@ -7,10 +7,22 @@
  * Author: [Softgetix]
  * Author URI: [www.softgetix.com]
  */
-function pluginprefix_activate() { 
-	flush_rewrite_rules( true );
+global $wpdb;
+function luxe_activate() { 
+	wp_cache_flush();
 }
-register_activation_hook( __FILE__, 'pluginprefix_activate' );
+function luxe_uninstall() {
+    global $wpdb;
+    $wpdb->query( "DELETE FROM $wpdb->options WHERE option_name LIKE 'luxe\_%'" );
+}
+function luxe_deactivate() {
+    global $wpdb;
+    $wpdb->query( "DELETE FROM $wpdb->options WHERE option_name LIKE 'luxe\_%'" );
+}
+register_activation_hook( __FILE__, 'luxe_activate' );
+register_uninstall_hook(__FILE__,'luxe_unistall');
+register_deactivation_hook(__FILE__,'luxe_deactivate');
+
  class LuxeMobileMenuSlide
 {
     public function __construct()
@@ -24,7 +36,7 @@ register_activation_hook( __FILE__, 'pluginprefix_activate' );
 
         // Add mobile menu toggle functionality
         add_action('wp_footer', array($this, 'toggle_menu'));
-        // add_action('wp_head', array($this, 'display_menu'));
+        add_action('wp_head', array($this, 'display_menu'));
 
         // Add shortcode to show mobile menu
         add_shortcode('luxe', array($this, 'luxe_shortcode'));

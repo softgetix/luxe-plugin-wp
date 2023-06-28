@@ -1,4 +1,3 @@
-
 <?php
 
 // Enqueue scripts and styles
@@ -16,9 +15,3 @@ function luxe_mobile_menu_slide_scripts() {
     wp_localize_script('luxe-mobile-menu-slide-script', 'luxe_mobile_menu_slide_color', $hamburger_color);
 }
 add_action('wp_enqueue_scripts', 'luxe_mobile_menu_slide_scripts');
-
-
-
-
-
-?>

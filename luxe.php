@@ -7,13 +7,15 @@
  * Author: [Softgetix]
  * Author URI: [www.softgetix.com]
  */
-class LuxeMobileMenuSlide
+function pluginprefix_activate() { 
+	flush_rewrite_rules( true );
+}
+register_activation_hook( __FILE__, 'pluginprefix_activate' );
+ class LuxeMobileMenuSlide
 {
     public function __construct()
     {
-
-
-        // Register the Elementor widget
+      // Register the Elementor widget
         require_once plugin_dir_path(__FILE__) . 'functions.php';
         add_action('elementor/widgets/widgets_registered', array($this, 'register_elementor_widget'));
 
@@ -27,7 +29,7 @@ class LuxeMobileMenuSlide
         // Add shortcode to show mobile menu
         add_shortcode('luxe', array($this, 'luxe_shortcode'));
         // add_action('init', array($this, 'create_primary_menu'));
-        add_action('admin_enqueue_scripts', array($this, 'luxe_mobile_menu_slide_enqueue_scripts'));
+        //add_action('admin_enqueue_scripts', array($this, 'luxe_mobile_menu_slide_enqueue_scripts'));
 
         // Include necessary files
         require_once plugin_dir_path(__FILE__) . 'includes/admin/settings.php';
@@ -35,10 +37,10 @@ class LuxeMobileMenuSlide
         require_once plugin_dir_path(__FILE__) . 'includes/mobile-menu.php';
         require_once plugin_dir_path(__FILE__) . 'includes/sub-menu.php';
     }
-    public function luxe_mobile_menu_slide_enqueue_scripts()
-    {
-        // wp_enqueue_media();
-    }
+    // public function luxe_mobile_menu_slide_enqueue_scripts()
+    // {
+    //     wp_enqueue_media();
+    // }
 
     public function register_elementor_widget()
     {
@@ -135,7 +137,6 @@ class LuxeMobileMenuSlide
                 });
             });
         </script>
-
         <?php
     }
 

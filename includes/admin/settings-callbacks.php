@@ -245,7 +245,7 @@ function luxe_mobile_menu_slide_hamburger_icon_styles_field_callback()
         'style_4' => 'Style 4',
         // Add more animation options as needed
     );
-    $html = '<div class="hamburgers_container ">';
+    $html = '<div class="hamburgers_container">';
 
     // echo '<select name="luxe_mobile_menu_slide_hamburger_icon_styles">';
     $no = 1;
@@ -256,7 +256,7 @@ function luxe_mobile_menu_slide_hamburger_icon_styles_field_callback()
         if ($animation_key == $togg) {
             $checked_class = 'checked';
         }
-        $string = '<label for="' . $animation_key . '" class="luxe-hamburger-label ' . $checked_class . '">
+        $string = '<label for="' . $animation_key . '" class="admin-luxe-hamburger-label ' . $checked_class . '">
   <div id="luxe-hamburger-animation' . $no . '" class="">
             <span></span>
             <span></span>

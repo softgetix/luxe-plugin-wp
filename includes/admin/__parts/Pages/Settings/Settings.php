@@ -153,32 +153,34 @@ function luxe_mobile_menu_slide_settings_page_callback()
 
     </style>
     <script type="text/javascript">
-        let copyText = document.querySelector(".copy-text");
-        copyText.querySelector("button").addEventListener("click", function () {
-            let input = copyText.querySelector("input.text");
-            input.select();
-            document.execCommand("copy");
-            copyText.classList.add("active");
-            window.getSelection().removeAllRanges();
-            setTimeout(function () {
-                copyText.classList.remove("active");
-            }, 2500);
-        });
+        // let copyText = document.querySelector(".copy-text");
+        // copyText.querySelector("button").addEventListener("click", function () {
+        //     let input = copyText.querySelector("input.text");
+        //     input.select();
+        //     document.execCommand("copy");
+        //     copyText.classList.add("active");
+        //     window.getSelection().removeAllRanges();
+        //     setTimeout(function () {
+        //         copyText.classList.remove("active");
+        //     }, 2500);
+        // });
 
 
 
     </script>
 
     <script>
-        const labels = document.querySelectorAll('.luxe-hamburger-label');
+        const labels = document.querySelectorAll('.admin-luxe-hamburger-label');
 
         labels.forEach(label => {
             const input = label.querySelector('input');
-
+            
+            
             label.addEventListener('click', function () {
                 labels.forEach(l => l.classList.remove('checked'));
                 label.classList.add('checked');
-
+                const divId = label.querySelector('div').id;
+                changeHamburgerAnimation(divId);
                 // Optional: Manually update the checked property of the input element
                 input.checked = true;
             });

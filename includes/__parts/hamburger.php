@@ -8,7 +8,7 @@ $luxe_mobile_menu_slide_hamburger_line_length = get_option('luxe_mobile_menu_sli
             <?php echo esc_attr($hamburger_width).'px' ?>
         ;
         height:
-            <?php echo esc_attr($hamburger_height).'px' ?>
+            <?php echo esc_attr($hamburger_height).'px'  ?>
         ;
     }
 
@@ -28,7 +28,7 @@ $luxe_mobile_menu_slide_hamburger_line_length = get_option('luxe_mobile_menu_sli
             <?php echo esc_attr($hamburger_color) ?>
         ;
         height:
-            <?php echo esc_attr($luxe_hamburger_line_thickness.'px'); ?>;
+            <?php echo esc_attr($luxe_hamburger_line_thickness.'px !important'); ?>;
      
     }
 </style>

@@ -17,20 +17,7 @@ function luxe_mobile_menu_slide_colors_section_callback()
 function luxe_mobile_menu_slide_hamburger_color_field_callback()
 {
     $hamburger_color = get_option('luxe_mobile_menu_slide_hamburger_color', '#000000');
-
-    // Add a CSS class based on the selected type
-    echo "<style>
-   .luxe-line-color .pickr{
-   background-color:$hamburger_color;
- }
-   </style>";
-
-    echo '<div class="luxe-line-color" id="luxe-color1">';
-    echo "<div id='colorPickerField1' class='color-picker-field' style='background-color:" . esc_attr($hamburger_color) . "'></div>";
-    echo " <label>
-   <input type='hidden' id='colorValue1' name='luxe_mobile_menu_slide_hamburger_color' value=" . esc_attr($hamburger_color) . ">
- </label>";
-    echo '</div>';
+    echo '<input type="text" id="colorValue1" name="luxe_mobile_menu_slide_hamburger_color" value="' . $hamburger_color . '" class="luxe_mobile_menu_slide_hamburger_color" data-default-color="#000000" />';
 
 
 }
@@ -84,21 +71,9 @@ function luxe_mobile_menu_slide_hamburger_border_radius_field_callback()
 function luxe_mobile_menu_slide_background_color_field_callback()
 {
     $background_color = get_option('luxe_mobile_menu_slide_background_color', '#ffffff');
-    // echo '<input type="color" name="luxe_mobile_menu_slide_background_color" id="luxe_mobile_menu_slide_background_color" value="' . esc_attr($background_color) . '">';
 
+    echo "<input type='hidden' id='colorValue2' name='luxe_mobile_menu_slide_background_color' class='luxe_mobile_menu_slide_background_color' value=" . esc_attr($background_color) . ">";
 
-    echo "<style>
-   .luxe-ham-bg-color .pickr{
-   background-color:$background_color;
- }
-   </style>";
-
-    echo '<div class="luxe-ham-bg-color" id="luxe-color2">';
-    echo "<div id='colorPickerField2' class='color-picker-field' style='background-color:" . esc_attr($background_color) . "'></div>";
-    echo " <label>
-   <input type='hidden' id='colorValue2' name='luxe_mobile_menu_slide_background_color' value=" . esc_attr($background_color) . ">
- </label>";
-    echo '</div>';
 }
 
 
@@ -106,41 +81,17 @@ function luxe_mobile_menu_slide_background_color_field_callback()
 function luxe_mobile_menu_slide_container_background_color_field_callback()
 {
     $container_background_color = get_option('luxe_mobile_menu_slide_container_background_color', '#ffffff');
-    echo "<style>
-    .luxe-ham-bg-color3 .pickr{
-    background-color:$container_background_color;
-  }
-    </style>";
 
-    echo '<div class="luxe-ham-bg-color3" id="luxe-color3">';
-    echo "<div id='colorPickerField3' class='color-picker-field' style='background-color:" . esc_attr($container_background_color) . "'></div>";
-    echo " <label>
-    <input type='hidden' id='colorValue3' class='colorValue3' name='luxe_mobile_menu_slide_container_background_color' value=" . esc_attr($container_background_color) . ">
-  </label>";
-    echo '</div>';
-
-
-    // echo '<input type="color" name="luxe_mobile_menu_slide_container_background_color" value="' . esc_attr($container_background_color) . '">';
+    echo "<input type='text' id='colorValue3' class='colorValue3' name='luxe_mobile_menu_slide_container_background_color' value=" . esc_attr($container_background_color) . ">";
+  
 }
 
 // Callback function for the dropdown container font color field
 function luxe_mobile_menu_slide_container_font_color_field_callback()
 {
     $container_font_color = get_option('luxe_mobile_menu_slide_container_font_color', '#ffffff');
-    // echo '<input type="color" name="luxe_mobile_menu_slide_container_font_color" value="' . esc_attr($container_font_color) . '">';
 
-    echo "<style>
-    .luxe-ham-bg-color4 .pickr{
-    background-color:$container_font_color;
-  }
-    </style>";
-
-    echo '<div class="luxe-ham-bg-color4" id="luxe-color4">';
-    echo "<div id='colorPickerField4' class='color-picker-field' style='background-color:" . esc_attr($container_font_color) . "'></div>";
-    echo " <label>
-    <input type='hidden' id='colorValue4' name='luxe_mobile_menu_slide_container_font_color' value=" . esc_attr($container_font_color) . ">
-  </label>";
-    echo '</div>';
+    echo "<input type='text' id='colorValue4' name='luxe_mobile_menu_slide_container_font_color' value=" . esc_attr($container_font_color) . ">";;
 }
 // callback function for  line thickness
 
@@ -200,7 +151,7 @@ function luxe_mobile_menu_slide_toggle_animation_field_callback()
         'luxe-background-animation-fade-down' => 'Slide Down',
 
         'luxe-background-animation-fade-up' => 'Slide Up',
-       
+
 
 
         // Add more animation options as needed

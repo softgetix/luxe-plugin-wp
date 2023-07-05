@@ -3,20 +3,20 @@
 
 function luxe_enqueue_bootstrap_admin()
 {
-    // Enqueue Bootstrap CSS
-    // wp_enqueue_style( 'bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' );
-
-    // // Enqueue Bootstrap JavaScript
-    // wp_enqueue_script( 'bootstrap-script', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js', array( 'jquery' ), '5.3.0', true );
+ 
     wp_enqueue_style('luxe-custom-css', plugins_url('/includes/admin/assets/css/styles.css', __FILE__));
     wp_enqueue_style('luxe-styles', plugin_dir_url(__FILE__) . 'css/luxe-styles.css');
     wp_enqueue_style('luxe-responsive-styles', plugin_dir_url(__FILE__) . 'css/luxe-responsive-styles.css');
     wp_enqueue_style('luxe-animation-styles', plugin_dir_url(__FILE__) . 'css/luxe-animation-styles.css');
-    wp_enqueue_style('pickr-css', 'https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css');
-    wp_enqueue_script('pickr-script', 'https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js', array(), '1.0.0', true);
     wp_enqueue_script('custom-js', plugins_url('/includes/admin/assets/js/script.js', __FILE__), array(), '1.0.0', true);
 }
 add_action('admin_enqueue_scripts', 'luxe_enqueue_bootstrap_admin');
+function luxe_enqueue_color_picker() {
+    wp_enqueue_style('wp-color-picker');
+    wp_enqueue_script('wp-color-picker');
+}
+
+add_action('admin_enqueue_scripts', 'luxe_enqueue_color_picker');
 
 // Register settings and fields
 function luxe_mobile_menu_slide_register_settings()

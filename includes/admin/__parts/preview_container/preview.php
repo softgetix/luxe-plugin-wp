@@ -157,11 +157,6 @@
         hamburger_line_color = jQuery(this).val();
         luxe_update_hamburger_line_color(hamburger_line_color);
     });
-    // getting the hamburger bgcolor on change
-    jQuery('#colorValue2').change(function () {
-        hamburger_bg_color = jQuery(this).val();
-        luxe_update_hamburger_bg_color(hamburger_bg_color);
-    });
 
     // getting the hamburger height on change
 

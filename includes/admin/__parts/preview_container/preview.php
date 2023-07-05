@@ -45,7 +45,10 @@
 <script>
     //function for update the line thickness
     function luxe_update_hamburger_line_thickness(line_thickness) {
-        jQuery('.luxe-hamburger-label span').css('height', line_thickness + 'px' + '!important');
+        // jQuery('.luxe-hamburger-label span').css('height', line_thickness + 'px' + '!important');
+        var label = jQuery('.luxe-hamburger-label span');
+    var inlineStyle = 'height: ' + line_thickness + 'px !important;';
+    label.attr('style', inlineStyle);
     }
     // function for update the border radius
     function luxe_update_border_radius(radius) {
@@ -84,6 +87,9 @@
     }
     function luxe_update_mobile_menu_slide_hamburger_icon_position(position) {
         jQuery('.luxe-preview-hamburger-container').css('justify-content', position);
+    }
+    function luxe_update_hamburger_menu_container_color(color) {
+        jQuery('.luxe-mobile-container1').css('background-color', color);
     }
     jQuery(document).ready(function () {
         // code for getting the hamburger width at the time of load function
@@ -140,6 +146,8 @@
         luxe_update_hamburger_line_color(hamburger_line_color);
     });
     // getting the hamburger border radius at time of change 
+
+
     jQuery('#luxe_mobile_menu_slide_hamburger_border_radius').change(function () {
         hamburger_border_radius = jQuery(this).val();
         luxe_update_border_radius(hamburger_border_radius);
@@ -154,6 +162,7 @@
         hamburger_bg_color = jQuery(this).val();
         luxe_update_hamburger_bg_color(hamburger_bg_color);
     });
+
     // getting the hamburger height on change
 
     jQuery('#luxe_mobile_menu_slide_hamburger_height').change(function () {
@@ -191,6 +200,8 @@
         luxe_menu_icon_position = jQuery(this).val();
         luxe_update_mobile_menu_slide_hamburger_icon_position(luxe_menu_icon_position);
     });
+
+
 
     jQuery(document).ready(function ($) {
 
@@ -252,10 +263,14 @@
 
 
             staggerAnimation = '<?php echo esc_js(get_option("luxe_mobile_menu_slide_container_stagger_animation", 0)); ?>';
+
             // if (staggerAnimation === 1) {
             $(document).on('change', '.luxe-toggler', function () {
                 if ($(this).is(':checked')) {
                     // $('body').css('overflow', 'hidden');
+
+                    staggerAnimation = jQuery('#luxe_mobile_menu_slide_container_stagger_animation').val();
+                    //alert(jQuery(this).val());
 
                     $('ul#luxe-menu-primary_navigation li:not(.luxe-menu-item-has-children li)').each(function (index) {
                         const $li = $(this);
@@ -277,16 +292,25 @@
 
     // callling the function for handling the hamburger animations styles
 
-    jQuery(document).ready(function () {
-        jQuery('input[name="luxe_mobile_menu_slide_hamburger_icon_styles"]').on('change', function () {
-            // Code to execute when the input value changes
-            var inputValue = $(this).val();
-            // Call your function here or perform any desired action with the input value
-            console.log('Input value changed:', inputValue);
-        });
-    });
+
     function changeHamburgerAnimation(animationName) {
         jQuery('label.luxe-hamburger-label div').attr('id', animationName);
+    }
+    function luxeChangeBackgroundAnimation(bgAnimationName) {
+
+        jQuery(".luxe-mobile-container2 + div").removeClass().addClass('luxe-mobile-container1 ' + bgAnimationName);
+    }
+    function luxeChangeTextAnimation(TextAnimationName) {
+
+        jQuery('#luxe-menu-primary_navigation:not(.luxe-menu-item-has-children li a) li').removeClass(function (index, className) {
+            return (className.match(/(^|\s)luxe_text_animation\S+/g) || []).join(' ');
+        }).addClass('luxe-mobile-container1 ' + TextAnimationName);
 
     }
+    function luxe_update_hamburger_menu_font_color(menuFontColor) {
+        jQuery('#luxe-menu-primary_navigation:not(.luxe-menu-item-has-children li a) li a').css('color', menuFontColor);
+    }
+
+
+
 </script>

@@ -14,10 +14,10 @@ function luxe_mobile_menu_slide_container_font_size_field_callback()
 
 
     // Generate an input field for the container font size value
-    $html .= '<input placeholder="ex : 15" type="number" step="0.1" name="luxe_mobile_menu_slide_container_font_size" value="' . $container_font_size . '">';
+    $html .= '<input placeholder="ex : 15" type="number" step="0.1" id="luxe_mobile_menu_slide_container_font_size" name="luxe_mobile_menu_slide_container_font_size" value="' . $container_font_size . '">';
 
     // Generate a select dropdown for the font size units
-    $html .= '<select name="luxe_mobile_menu_slide_container_font_size_unit">';
+    $html .= '<select name="luxe_mobile_menu_slide_container_font_size_unit" id="luxe_mobile_menu_slide_container_font_size_unit">';
     foreach ($size_units as $size_unit => $size_unit_label) {
         // Check if the current option is selected
         if ($container_font_size_unit == $size_unit) {
@@ -47,10 +47,10 @@ function luxe_mobile_menu_slide_container_font_line_height_field_callback()
     $menu_line_height_unit = get_option('luxe_mobile_menu_slide_container_line_height_unit', 'px');
 
     // Display an input field for the menu line height value
-    echo '<input placeholder="ex :  15" step="0.1" type="number" name="luxe_mobile_menu_slide_container_font_line_height" value="' . esc_attr($menu_line_height) . '">';
+    echo '<input placeholder="ex :  15" step="0.1" type="number" id="luxe_mobile_menu_slide_container_font_line_height" name="luxe_mobile_menu_slide_container_font_line_height" value="' . esc_attr($menu_line_height) . '">';
 
     // Generate a select dropdown for the line height units
-    $html .= '<select name="luxe_mobile_menu_slide_container_line_height_unit">';
+    $html .= '<select id="luxe_mobile_menu_slide_container_line_height_unit" name="luxe_mobile_menu_slide_container_line_height_unit">';
     foreach ($size_units as $size_unit => $size_unit_label) {
         // Check if the current option is selected
         if ($menu_line_height_unit == $size_unit) {
@@ -112,7 +112,7 @@ function luxe_mobile_menu_slide_container_stagger_animation_field_callback()
     $html = '';
     $stagger_animation = get_option('luxe_mobile_menu_slide_container_stagger_animation', 1);
 
-    $html .= '<select name="luxe_mobile_menu_slide_container_stagger_animation">';
+    $html .= '<select name="luxe_mobile_menu_slide_container_stagger_animation" id="luxe_mobile_menu_slide_container_stagger_animation">';
     $html .= '<option' . ($stagger_animation ? '' : ' selected') . ' value="0">No</option>';
     $html .= '<option' . ($stagger_animation ? ' selected' : '') . ' value="1">Yes</option>';
     $html .= '</select>';

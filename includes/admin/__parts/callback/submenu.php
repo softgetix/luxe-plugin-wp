@@ -31,9 +31,9 @@ function luxe_mobile_menu_slide_container_sub_font_size_field_callback()
     // getting the font size unit
     $submenu_font_size_unit = get_option('luxe_mobile_menu_slide_container_sub_font_size_unit', 'px');
     // printing the input field 
-    echo '<input type="number" name="luxe_mobile_menu_slide_container_sub_font_size" step="0.1" value="' . esc_attr($container_submenu_font_size) . '">';
+    echo '<input type="number" name="luxe_mobile_menu_slide_container_sub_font_size" id="luxe_mobile_menu_slide_container_sub_font_size" step="0.1" value="' . esc_attr($container_submenu_font_size) . '">';
 
-    $html .= '<select name="luxe_mobile_menu_slide_container_sub_font_size_unit">';
+    $html .= '<select name="luxe_mobile_menu_slide_container_sub_font_size_unit" id="luxe_mobile_menu_slide_container_sub_font_size_unit">';
     foreach ($size_units as $size_unit => $size_unit_label) {
         // Check if the current option is selected
         if ($submenu_font_size_unit == $size_unit) {
@@ -60,10 +60,10 @@ function luxe_mobile_menu_slide_container_sub_line_height_callback()
     $menu_line_height_unit = get_option('luxe_mobile_menu_slide_container_sub_line_height_unit', 'px');
 
     // Display an input field for the menu line height value
-    echo '<input placeholder="" type="number" step="0.1" name="luxe_mobile_menu_slide_container_sub_line_height" value="' .$menu_line_height . '">';
+    echo '<input placeholder="" id="luxe_mobile_menu_slide_container_sub_line_height" type="number" step="0.1" name="luxe_mobile_menu_slide_container_sub_line_height" value="' .$menu_line_height . '">';
 
     // Generate a select dropdown for the line height units
-    $html .= '<select name="luxe_mobile_menu_slide_container_sub_line_height_unit">';
+    $html .= '<select name="luxe_mobile_menu_slide_container_sub_line_height_unit" id="luxe_mobile_menu_slide_container_sub_line_height_unit">';
     foreach ($size_units as $size_unit => $size_unit_label) {
         // Check if the current option is selected
         if ($menu_line_height_unit == $size_unit) {

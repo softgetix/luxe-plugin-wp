@@ -115,7 +115,7 @@ function luxe_mobile_menu_slide_container_background_color_field_callback()
     echo '<div class="luxe-ham-bg-color3" id="luxe-color3">';
     echo "<div id='colorPickerField3' class='color-picker-field' style='background-color:" . esc_attr($container_background_color) . "'></div>";
     echo " <label>
-    <input type='hidden' id='colorValue3' name='luxe_mobile_menu_slide_container_background_color' value=" . esc_attr($container_background_color) . ">
+    <input type='hidden' id='colorValue3' class='colorValue3' name='luxe_mobile_menu_slide_container_background_color' value=" . esc_attr($container_background_color) . ">
   </label>";
     echo '</div>';
 

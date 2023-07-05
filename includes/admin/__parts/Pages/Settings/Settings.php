@@ -197,7 +197,8 @@ function luxe_mobile_menu_slide_settings_page_callback()
             animatelabel.addEventListener('click', function () {
                 animatelabels.forEach(l => l.classList.remove('checked'));
                 animatelabel.classList.add('checked');
-
+                value = animatelabel.querySelector('input').value;
+                luxeChangeBackgroundAnimation(value);
                 // Optional: Manually update the checked property of the input element
                 input.checked = true;
             });
@@ -213,7 +214,8 @@ function luxe_mobile_menu_slide_settings_page_callback()
             textlabel.addEventListener('click', function () {
                 textlabels.forEach(l => l.classList.remove('checked'));
                 textlabel.classList.add('checked');
-
+                value = textlabel.querySelector('input').value;
+                luxeChangeTextAnimation(value);
                 // Optional: Manually update the checked property of the input element
                 input.checked = true;
             });

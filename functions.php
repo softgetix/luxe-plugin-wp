@@ -9,6 +9,8 @@ function luxe_enqueue_bootstrap_admin()
     wp_enqueue_style('luxe-responsive-styles', plugin_dir_url(__FILE__) . 'css/luxe-responsive-styles.css');
     wp_enqueue_style('luxe-animation-styles', plugin_dir_url(__FILE__) . 'css/luxe-animation-styles.css');
     wp_enqueue_script('custom-js', plugins_url('/includes/admin/assets/js/script.js', __FILE__), array(), '1.0.0', true);
+    wp_enqueue_script('script-js', plugins_url('/js/luxe-script.js', __FILE__), array(), '1.0.0', true);
+
 }
 add_action('admin_enqueue_scripts', 'luxe_enqueue_bootstrap_admin');
 function luxe_enqueue_color_picker() {

@@ -146,7 +146,7 @@ div#luxe_mobile_menu_slide_logo_image_preview {
 .nav-tab-wrapper a:first-child {
   margin-left: 0px;
 }
-.toplevel_page_luxe-mobile-menu-slide-settings ul:not(#luxe-menu-primary_navigation) li:last-child a {
+.toplevel_page_luxe-mobile-menu-slide-settings ul:not(#luxe-menu-primary_navigation) ul:not(.luxe-sub-menu) li:last-child a {
   color: #72aee6 !important   ;
 }
 .luxe-settings-section-menu h2:first-child {
@@ -616,4 +616,7 @@ span.luxe-preview-badge {
 }  
 .luxe-shortcode-bar label{
   line-height: 2;
+}
+#luxe-menu-primary_navigation li{
+  margin-bottom: 0px;
 }

@@ -1,4 +1,3 @@
-
 jQuery(document).ready(function ($) {
   $(".luxe_mobile_menu_slide_hamburger_color").wpColorPicker({
     change: function (event, ui) {
@@ -25,7 +24,7 @@ jQuery(document).ready(function ($) {
   });
   $("#colorValue5").wpColorPicker({
     change: function (event, ui) {
-      luxe_update_hamburger_menu_font_color(ui.color.toString());
+      luxe_update_hamburger_sub_menu_font_color(ui.color.toString());
     },
   });
 });
@@ -36,7 +35,7 @@ jQuery("#luxe_mobile_menu_slide_container_font_size").change(function () {
   var fontSizeUnit = jQuery(
     "select[name='luxe_mobile_menu_slide_container_font_size_unit']"
   ).val();
-  jQuery("#luxe-menu-primary_navigation a").css(
+  jQuery("ul#luxe-menu-primary_navigation a:not(.luxe-sub-menu a)").css(
     "font-size",
     value + fontSizeUnit
   );
@@ -45,7 +44,10 @@ jQuery("#luxe_mobile_menu_slide_container_font_size").change(function () {
 jQuery("#luxe_mobile_menu_slide_container_font_size_unit").change(function () {
   value = jQuery(this).val();
   var fontSize = jQuery("#luxe_mobile_menu_slide_container_font_size").val();
-  jQuery("#luxe-menu-primary_navigation a").css("font-size", fontSize + value);
+  jQuery("ul#luxe-menu-primary_navigation a:not(.luxe-sub-menu a)").css(
+    "font-size",
+    fontSize + value
+  );
 });
 jQuery("#luxe_mobile_menu_slide_container_font_line_height").change(
   function () {
@@ -53,7 +55,7 @@ jQuery("#luxe_mobile_menu_slide_container_font_line_height").change(
     var fontSizeUnit = jQuery(
       "#luxe_mobile_menu_slide_container_line_height_unit"
     ).val();
-    jQuery("#luxe-menu-primary_navigation a").css(
+    jQuery("ul#luxe-menu-primary_navigation a:not(.luxe-sub-menu a)").css(
       "line-height",
       value + fontSizeUnit
     );
@@ -66,7 +68,7 @@ jQuery("#luxe_mobile_menu_slide_container_line_height_unit").change(
     var fontSize = jQuery(
       "#luxe_mobile_menu_slide_container_font_line_height"
     ).val();
-    jQuery("#luxe-menu-primary_navigation a").css(
+    jQuery("ul#luxe-menu-primary_navigation a:not(.luxe-sub-menu a)").css(
       "line-height",
       fontSize + value
     );
@@ -80,10 +82,7 @@ jQuery("#luxe_mobile_menu_slide_container_sub_font_size").change(function () {
   var fontSizeUnit = jQuery(
     "#luxe_mobile_menu_slide_container_sub_font_size_unit"
   ).val();
-  jQuery("#luxe-menu-primary_navigation .luxe-sub-menu a").css(
-    "font-size",
-    value + fontSizeUnit
-  );
+  jQuery("ul.luxe-sub-menu li").attr("style", "font-size: " + value + fontSizeUnit + ";");
 });
 
 jQuery("#luxe_mobile_menu_slide_container_sub_font_size_unit").change(
@@ -92,10 +91,8 @@ jQuery("#luxe_mobile_menu_slide_container_sub_font_size_unit").change(
     var fontSize = jQuery(
       "#luxe_mobile_menu_slide_container_sub_font_size"
     ).val();
-    jQuery("#luxe-menu-primary_navigation .luxe-sub-menu a").css(
-      "font-size",
-      fontSize + value
-    );
+    
+    jQuery("ul.luxe-sub-menu li").attr("style", "font-size: " +  fontSize + value  + ";");
   }
 );
 jQuery("#luxe_mobile_menu_slide_container_sub_line_height").change(function () {
@@ -103,7 +100,7 @@ jQuery("#luxe_mobile_menu_slide_container_sub_line_height").change(function () {
   var fontSizeUnit = jQuery(
     "#luxe_mobile_menu_slide_container_sub_line_height_unit"
   ).val();
-  jQuery("#luxe-menu-primary_navigation .luxe-sub-menu a").css(
+  jQuery("#luxe-menu-primary_navigation .luxe-sub-menu li").css(
     "line-height",
     value + fontSizeUnit
   );
@@ -115,7 +112,7 @@ jQuery("#luxe_mobile_menu_slide_container_sub_line_height_unit").change(
     var fontSize = jQuery(
       "#luxe_mobile_menu_slide_container_sub_line_height"
     ).val();
-    jQuery("#luxe-menu-primary_navigation .luxe-sub-menu a").css(
+    jQuery("#luxe-menu-primary_navigation .luxe-sub-menu li").css(
       "line-height",
       fontSize + value
     );

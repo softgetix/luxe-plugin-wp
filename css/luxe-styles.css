@@ -216,6 +216,9 @@ label.luxe-hamburger-label
   width: 100%;
   justify-content: center;
 }
+.luxe-preview-container .luxe-menu-wrap .luxe-mobile-menu .luxe-mobile-container2{
+  height: 100%;
+}
 
 /* hamburger styles */
 

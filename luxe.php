@@ -16,8 +16,7 @@ function luxe_uninstall() {
     $wpdb->query( "DELETE FROM $wpdb->options WHERE option_name LIKE 'luxe\_%'" );
 }
 function luxe_deactivate() {
-    global $wpdb;
-    $wpdb->query( "DELETE FROM $wpdb->options WHERE option_name LIKE 'luxe\_%'" );
+    wp_cache_flush();
 }
 register_activation_hook( __FILE__, 'luxe_activate' );
 register_uninstall_hook(__FILE__,'luxe_unistall');
@@ -36,7 +35,7 @@ register_deactivation_hook(__FILE__,'luxe_deactivate');
 
         // Add mobile menu toggle functionality
         add_action('wp_footer', array($this, 'toggle_menu'));
-        // add_action('wp_head', array($this, 'display_menu'));
+         add_action('wp_head', array($this, 'display_menu'));
 
         // Add shortcode to show mobile menu
         add_shortcode('luxe', array($this, 'luxe_shortcode'));

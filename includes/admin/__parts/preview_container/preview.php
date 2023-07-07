@@ -47,8 +47,8 @@
     function luxe_update_hamburger_line_thickness(line_thickness) {
         // jQuery('.luxe-hamburger-label span').css('height', line_thickness + 'px' + '!important');
         var label = jQuery('.luxe-hamburger-label span');
-    var inlineStyle = 'height: ' + line_thickness + 'px !important;';
-    label.attr('style', inlineStyle);
+        var inlineStyle = 'height: ' + line_thickness + 'px !important;';
+        label.attr('style', inlineStyle);
     }
     // function for update the border radius
     function luxe_update_border_radius(radius) {
@@ -303,7 +303,12 @@
 
     }
     function luxe_update_hamburger_menu_font_color(menuFontColor) {
-        jQuery('#luxe-menu-primary_navigation:not(.luxe-menu-item-has-children li a) li a').css('color', menuFontColor);
+        jQuery('ul#luxe-menu-primary_navigation a:not(.luxe-sub-menu a)').css('color', menuFontColor);
+
+    }
+    function luxe_update_hamburger_sub_menu_font_color(menuFontColor) {
+        jQuery('ul#luxe-menu-primary_navigation .luxe-sub-menu a').css('color', menuFontColor);
+
     }
 
 
